@@ -8,6 +8,7 @@ public class playerMovement : MonoBehaviour
     private float moveSpeed = 5f;
 
     public Rigidbody2D rb;
+    public Animator animator;
 
     Vector2 movement;
 
@@ -19,6 +20,7 @@ public class playerMovement : MonoBehaviour
     void Start()
     {
         dashTime = startDashTime;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -75,6 +77,20 @@ public class playerMovement : MonoBehaviour
                 moveSpeed = dashSpeed;
             }
         }
+        
+        if (movement.y > 0 ) {
+            animator.SetInteger("direction", 2);
+        } else if (movement.y < 0) {
+            animator.SetInteger("direction", 0);
+        }
+
+        if (movement.x > 0) {
+            animator.SetInteger("direction", 1);
+        } else if (movement.x < 0) {
+            animator.SetInteger("direction", 3);
+        }
+
+        animator.SetBool("moving", movement.magnitude > 0);
     }
 
     private void FixedUpdate()
