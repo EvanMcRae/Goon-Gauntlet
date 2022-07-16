@@ -721,6 +721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1529031158}
+  - component: {fileID: 1529031159}
   m_Layer: 0
   m_Name: spawner
   m_TagString: Untagged
@@ -743,6 +744,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!114 &1529031159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529031157}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 309a69e129ce7a64aaf1a312865e8ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reqKills: 0
+  enemies: 3
+  counter: 0
+  enemy1prefab: {fileID: 0}
+--- !u!1 &1538453271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4490666878137231950, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
+  m_PrefabInstance: {fileID: 1610772962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1538453274
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538453271}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+>>>>>>> Stashed changes
 --- !u!1001 &1610772962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -808,6 +853,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
+<<<<<<< Updated upstream
+=======
+--- !u!1 &1689790646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7791785790598063365, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
+  m_PrefabInstance: {fileID: 1610772962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1689790651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689790646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5452e8c7e0df36f439ac0e769d20d01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: 0
+  weaponAnimators: []
+  normalAnimator: {fileID: 22100000, guid: e9652d930d7dccb42ba32f548d06468f, type: 2}
+  attackAnimator: {fileID: 22100000, guid: bc3b7e992f8760d45940caed085c34ab, type: 2}
+  animator: {fileID: 0}
+  weaponAnimator: {fileID: 1538453274}
+>>>>>>> Stashed changes
 --- !u!4 &1689790655 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7791785790598063366, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
