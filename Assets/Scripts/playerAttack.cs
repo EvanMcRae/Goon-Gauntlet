@@ -68,7 +68,19 @@ public class playerAttack : MonoBehaviour
     {
         //detect which weapon is selected
         //detect what direction the player is facing
-        Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        if(weapon != Weapon.GUN)
+        {
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                Debug.Log("we hit " + enemy.name);
+            }
+        }
+        else
+        {
+            //implement shooting mechanincs 
+        }
         yield return null;
     }
 }

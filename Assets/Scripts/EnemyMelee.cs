@@ -48,6 +48,9 @@ public class EnemyMelee : MonoBehaviour
 
     void lunge()
     {
+        //maybe gets players position in a holder, then moves towards it
 
+        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        print("moves toward player");
     }
 }
