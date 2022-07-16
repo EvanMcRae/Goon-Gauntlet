@@ -23,6 +23,7 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        direction = 2;
         dashTime = startDashTime;
     }
 
@@ -81,8 +82,9 @@ public class playerMovement : MonoBehaviour
             }
         }
         
-        animator.SetInteger("direction", direction);
-        weaponAnimator.SetInteger("direction", direction);
+        animator.SetInteger("direction", Mathf.Clamp(direction, 1, 2));
+        weaponAnimator.SetInteger("direction", Mathf.Clamp(direction, 1, 2));
+        
         animator.SetBool("moving", movement.magnitude > 0);
     }
 

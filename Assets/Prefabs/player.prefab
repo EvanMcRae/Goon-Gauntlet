@@ -179,7 +179,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 76e3f0ed37259da4e8f6c3467ac48588, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 80c1830a6e7fb0f4781864d5d676264e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -265,6 +265,7 @@ MonoBehaviour:
   weaponAnimator: {fileID: 1538453274}
   dashSpeed: 50
   startDashTime: 0.1
+  direction: 0
 --- !u!50 &7791785790598063364
 Rigidbody2D:
   serializedVersion: 4
@@ -333,3 +334,8 @@ MonoBehaviour:
   attackAnimator: {fileID: 22100000, guid: bc3b7e992f8760d45940caed085c34ab, type: 2}
   animator: {fileID: 7791785790061774772}
   weaponAnimator: {fileID: 1538453274}
+  attackPoint: {fileID: 0}
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  attackRange: 0.5
