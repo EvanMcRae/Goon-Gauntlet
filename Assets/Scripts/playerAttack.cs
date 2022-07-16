@@ -31,6 +31,27 @@ public class playerAttack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             Attack();
+            if (weapon != Weapon.GUN)
+            {
+                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+                foreach (Collider2D enemy in hitEnemies)
+                {
+                    enemy.GetComponent<EnemyMelee>().ApplyDamage(1);
+                    if (weapon == Weapon.CLAW)
+                    {
+
+                    }
+                    else if (weapon == Weapon.GLOVE)
+                    {
+
+                    }
+                }
+            }
+            else
+            {
+                //implement shooting mechanincs 
+            }
         }
     
         // TEMP - resetting attack display
@@ -75,6 +96,15 @@ public class playerAttack : MonoBehaviour
             foreach (Collider2D enemy in hitEnemies)
             {
                 Debug.Log("we hit " + enemy.name);
+                enemy.GetComponent<EnemyMelee>().ApplyDamage(1);
+                if(weapon == Weapon.CLAW)
+                {
+
+                }
+                else if(weapon == Weapon.GLOVE)
+                {
+
+                }
             }
         }
         else

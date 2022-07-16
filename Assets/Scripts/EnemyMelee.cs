@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMelee : MonoBehaviour
 {
-    public float life;
+    public float life = 3;
     public float speed;
     public float stoppingDistance;
     public float force;
@@ -34,7 +34,7 @@ public class EnemyMelee : MonoBehaviour
         GetComponent<SpriteRenderer>().flipX = target.position.x - transform.position.x < 0;
     }
 
-    void ApplyDamage(float damage)
+    public void ApplyDamage(float damage)
     {
         // MethodBase methodBase = MethodBase.GetCurrentMethod();
         // Debug.Log(methodBase.Name);
@@ -59,7 +59,7 @@ public class EnemyMelee : MonoBehaviour
         Vector3 dir = target.transform.position - transform.position;
         dir = dir.normalized;
         GetComponent<Rigidbody2D>().AddForce(dir * force);
-        print("moves toward player");
+        //print("moves toward player");
     }
 
     void moveAgain()
@@ -71,14 +71,12 @@ public class EnemyMelee : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(col.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
-            col.GetComponent<playerHealth>().takeDamage();
+            target.GetComponent<playerHealth>().takeDamage();
         }
-        //damage player
-
     }
 
 }

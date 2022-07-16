@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cf9a6fa59d08c49860a63e510471ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
+  life: 3
   speed: 5
   stoppingDistance: 3
   force: 500
