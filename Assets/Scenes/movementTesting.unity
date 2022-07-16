@@ -390,7 +390,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5
   rb: {fileID: 343166205}
-  animator: {fileID: 0}
+  normalAnimator: {fileID: 22100000, guid: e9652d930d7dccb42ba32f548d06468f, type: 2}
+  attackAnimator: {fileID: 22100000, guid: bc3b7e992f8760d45940caed085c34ab, type: 2}
   dashSpeed: 50
   startDashTime: 0.1
 --- !u!95 &343166209
@@ -403,7 +404,7 @@ Animator:
   m_GameObject: {fileID: 343166204}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 135c9d80d29a11f4eb64f89585967fd5, type: 2}
+  m_Controller: {fileID: 22100000, guid: e9652d930d7dccb42ba32f548d06468f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -466,6 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27cf9a6fa59d08c49860a63e510471ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 0
   speed: 5
   stoppingDistance: 3
 --- !u!212 &643024404
@@ -1320,6 +1322,10 @@ PrefabInstance:
     - target: {fileID: 5896729377856081401, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896729377856081401, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}

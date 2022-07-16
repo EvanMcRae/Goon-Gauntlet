@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Animations;
 
 public class playerMovement : MonoBehaviour
 {
@@ -8,7 +9,10 @@ public class playerMovement : MonoBehaviour
     private float moveSpeed = 5f;
 
     public Rigidbody2D rb;
-    public Animator animator;
+    private Animator animator;
+    public RuntimeAnimatorController normalAnimator, attackAnimator;
+
+
 
     Vector2 movement;
 
@@ -16,11 +20,13 @@ public class playerMovement : MonoBehaviour
     private float dashTime;
     public float startDashTime;
     private int direction;
+
     // Start is called before the first frame update
     void Start()
     {
         dashTime = startDashTime;
         animator = GetComponent<Animator>();
+        animator.runtimeAnimatorController = normalAnimator;
     }
 
     // Update is called once per frame
@@ -91,6 +97,15 @@ public class playerMovement : MonoBehaviour
         }
 
         animator.SetBool("moving", movement.magnitude > 0);
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            animator.runtimeAnimatorController = attackAnimator;
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            animator.runtimeAnimatorController = normalAnimator;
+        }
     }
 
     private void FixedUpdate()
