@@ -60,7 +60,11 @@ public class EnemyMelee : MonoBehaviour
 
     void moveAgain()
     {
-        movement = true;
+        if(movement == false)
+        {
+            movement = true;
+            rb.velocity = new Vector2(0f,0f);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
