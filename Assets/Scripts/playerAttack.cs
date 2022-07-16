@@ -29,6 +29,13 @@ public class playerAttack : MonoBehaviour
         {
             Attack();
         }
+    
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            animator.runtimeAnimatorController = normalAnimator;
+            weaponAnimator.SetBool("attack", false);
+        }
+        
         // TEMP - testing dice roll
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -38,17 +45,8 @@ public class playerAttack : MonoBehaviour
 
     void Attack()
     {
-        // TEMP CODE - gets arm moving
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            animator.runtimeAnimatorController = attackAnimator;
-            weaponAnimator.SetBool("attacking", true);
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            animator.runtimeAnimatorController = normalAnimator;
-            weaponAnimator.SetBool("attacking", true);
-        }
+        animator.runtimeAnimatorController = attackAnimator;
+        weaponAnimator.SetBool("attack", true);
         //StartCoroutine(PerformAttack());
     }
 

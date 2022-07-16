@@ -7,5 +7,5 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Magnet
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9d32865c26f152478402c4c5acbad09, type: 2}
   m_Clips: []

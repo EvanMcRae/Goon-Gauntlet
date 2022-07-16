@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1972406623057866339}
   - component: {fileID: 5779722527504059202}
+  - component: {fileID: 1538453274}
   m_Layer: 0
   m_Name: weapon
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: d2c24efaf4f8e9f4289d478fd147103f, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,9 +82,29 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1538453274
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490666878137231950}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 0673b2e0677941643a4d3a2b66d569bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7791785790061774773
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +222,7 @@ GameObject:
   - component: {fileID: 7791785790598063353}
   - component: {fileID: 7791785790598063364}
   - component: {fileID: 7791785790598063355}
+  - component: {fileID: 1689790651}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -240,8 +262,7 @@ MonoBehaviour:
   walkSpeed: 5
   rb: {fileID: 7791785790598063364}
   animator: {fileID: 7791785790061774772}
-  normalAnimator: {fileID: 22100000, guid: e9652d930d7dccb42ba32f548d06468f, type: 2}
-  attackAnimator: {fileID: 22100000, guid: bc3b7e992f8760d45940caed085c34ab, type: 2}
+  weaponAnimator: {fileID: 1538453274}
   dashSpeed: 50
   startDashTime: 0.1
 --- !u!50 &7791785790598063364
@@ -287,3 +308,28 @@ MonoBehaviour:
   - {fileID: 0}
   fullHeart: {fileID: 21300000, guid: 2e85602892765144a88d961d8ed79ba4, type: 3}
   emptyHeart: {fileID: 21300000, guid: 621d9f26b43ca9b4f804814435401d23, type: 3}
+--- !u!114 &1689790651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7791785790598063365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5452e8c7e0df36f439ac0e769d20d01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: 5
+  weaponAnimators:
+  - {fileID: 22100000, guid: 1a2106efeaeb7134183ce35759ca05c4, type: 2}
+  - {fileID: 22100000, guid: 1a3d4b6c1db972941a36b4e3d63d42bd, type: 2}
+  - {fileID: 22100000, guid: 1946e1be2275dac4fa29e6d9959b5096, type: 2}
+  - {fileID: 22100000, guid: 9f28367ef8974eb408b8fbc325607bbb, type: 2}
+  - {fileID: 22100000, guid: ebf23b46f839aa14186952e886c06729, type: 2}
+  - {fileID: 22100000, guid: 0673b2e0677941643a4d3a2b66d569bd, type: 2}
+  - {fileID: 22100000, guid: db6f48278e122b341896ce85dc7501fa, type: 2}
+  normalAnimator: {fileID: 22100000, guid: e9652d930d7dccb42ba32f548d06468f, type: 2}
+  attackAnimator: {fileID: 22100000, guid: bc3b7e992f8760d45940caed085c34ab, type: 2}
+  animator: {fileID: 7791785790061774772}
+  weaponAnimator: {fileID: 1538453274}
