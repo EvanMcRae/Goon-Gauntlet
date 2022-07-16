@@ -41,10 +41,12 @@ public class EnemyMelee : MonoBehaviour
         // transform.GetComponent<Animator>().SetBool("Hit", true);
         life -= damage;
         if (life < 0) life = 0;
+        GetComponent<SimpleFlash>().Flash(1.0f, 2, true);
 
         if(life == 0)
         {
             waveSpawner.kills++;
+            GameObject.Destroy(gameObject);
         }
     }
 
