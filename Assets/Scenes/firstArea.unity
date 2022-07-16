@@ -839,7 +839,7 @@ MonoBehaviour:
   reqKills: 0
   enemies: 3
   counter: 0
-  enemy1prefab: {fileID: 1997999736619233521, guid: 5c6d4c9c82d3a76498654529d936d970, type: 3}
+  enemy1prefab: {fileID: 5242123242753296884, guid: 389655989876d924dba094ed68de6203, type: 3}
 --- !u!1001 &1610772962
 PrefabInstance:
   m_ObjectHideFlags: 0

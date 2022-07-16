@@ -30,6 +30,8 @@ public class EnemyMelee : MonoBehaviour
         {
             movement = false;
         }
+        
+        GetComponent<SpriteRenderer>().flipX = target.position.x - transform.position.x < 0;
     }
 
     void ApplyDamage(float damage)
