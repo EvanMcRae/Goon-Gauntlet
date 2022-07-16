@@ -40,6 +40,10 @@ public class EnemyMelee : MonoBehaviour
         life -= damage;
         if (life < 0) life = 0;
 
+        if(life == 0)
+        {
+            waveSpawner.kills++;
+        }
     }
 
     void lunge()
