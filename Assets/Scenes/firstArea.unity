@@ -889,9 +889,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1538453274, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 1a3d4b6c1db972941a36b4e3d63d42bd, type: 2}
+    - target: {fileID: 1689790651, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
+      propertyPath: weapon
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1972406623057866339, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972406623057866339, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1972406623057866339, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -932,7 +944,7 @@ PrefabInstance:
     - target: {fileID: 5779722527504059202, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d2c24efaf4f8e9f4289d478fd147103f, type: 3}
+      objectReference: {fileID: 21300000, guid: 5ffb31980da70984180630226a8ba8b8, type: 3}
     - target: {fileID: 5779722527504059202, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
