@@ -8,4 +8,12 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Claw
   m_Controller: {fileID: 9100000, guid: f9d32865c26f152478402c4c5acbad09, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 7764a76bb3e9f2f4e914179bdec6cc20, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 459a778df8a05f54794a04f658c4e4f2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3035dc66e043e5744a547e871287788a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5d0b4bd579b03094ca2c77803b79b71a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6d57f9ba89bb986429c460a0563556ec, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 10265e07b3aebd94ab697a5fa5709016, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 24a87343ac32c514cbcea3ecaeed3ed7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ed3db5d5bf62277429286d4adc0f768e, type: 2}

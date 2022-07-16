@@ -892,10 +892,10 @@ PrefabInstance:
     - target: {fileID: 1538453274, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 1a3d4b6c1db972941a36b4e3d63d42bd, type: 2}
+      objectReference: {fileID: 22100000, guid: 9f28367ef8974eb408b8fbc325607bbb, type: 2}
     - target: {fileID: 1689790651, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: weapon
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1972406623057866339, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -940,6 +940,14 @@ PrefabInstance:
     - target: {fileID: 5779722527504059202, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: m_FlipY
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779722527504059202, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779722527504059202, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5779722527504059202, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: m_Sprite

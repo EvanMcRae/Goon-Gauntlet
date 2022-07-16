@@ -8,4 +8,12 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Glove
   m_Controller: {fileID: 9100000, guid: f9d32865c26f152478402c4c5acbad09, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 6d57f9ba89bb986429c460a0563556ec, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 51db4c2bb39c30f438d0080532075deb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 24a87343ac32c514cbcea3ecaeed3ed7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 453bcb1664a580141b51f866488cb9c9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3035dc66e043e5744a547e871287788a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5c311c894d8a0c44dbf64ec507e51271, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7764a76bb3e9f2f4e914179bdec6cc20, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 737ad1f001c3efb479ea09a498984ece, type: 2}
