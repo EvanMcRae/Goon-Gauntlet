@@ -8,6 +8,8 @@ public class waveSpawner : MonoBehaviour
     public int enemies = 3;
     public static int kills = 0; //whenerver an enemies dies, its death function or whatever will add 1 to kills
     public int counter = 0;
+
+    public GameObject enemy1prefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,8 @@ public class waveSpawner : MonoBehaviour
     void spawnWave(int spawns)
     {
         //spawn enemies in arena
+        float randomX = Random.Range(-17f, 20f);
+        float randomY = Random.Range(-13f, 8f);
     }
 
 }
