@@ -59,7 +59,7 @@ public class playerHealth : MonoBehaviour
         return x.name.CompareTo(y.name);
     }
 
-    void takeDamage()
+    public void takeDamage()
     {
         health -= 1;
     }

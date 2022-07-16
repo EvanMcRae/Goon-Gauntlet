@@ -69,7 +69,10 @@ public class EnemyMelee : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("goon collided with " + col.name);
+        if(col.tag == "Player")
+        {
+            col.GetComponent<playerHealth>().takeDamage();
+        }
         //damage player
 
     }
