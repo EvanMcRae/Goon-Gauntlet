@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMelee : MonoBehaviour
 {
-
+    public float life;
     public float speed;
     public float stoppingDistance;
 
@@ -24,5 +24,26 @@ public class EnemyMelee : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
+        else
+        {
+            //start lunge animation
+        }
+    }
+
+    void ApplyDamage(float damage)
+    {
+        // MethodBase methodBase = MethodBase.GetCurrentMethod();
+        // Debug.Log(methodBase.Name);
+        
+        damage = Mathf.Abs(damage);
+        // transform.GetComponent<Animator>().SetBool("Hit", true);
+        life -= damage;
+        if (life < 0) life = 0;
+
+    }
+
+    void lunge()
+    {
+
     }
 }
