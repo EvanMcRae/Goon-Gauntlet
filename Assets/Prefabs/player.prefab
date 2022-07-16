@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1972406623057866339}
   - component: {fileID: 5779722527504059202}
   - component: {fileID: 1538453274}
+  - component: {fileID: 3178805743975108517}
   m_Layer: 0
   m_Name: weapon
   m_TagString: Untagged
@@ -105,6 +106,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3178805743975108517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490666878137231950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e12e787267acb344b8d0b137c6e2ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: f48c11c1d88e39a49b5a727880050983, type: 2}
 --- !u!1 &7791785790061774773
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,6 +130,7 @@ GameObject:
   - component: {fileID: 7791785790061774774}
   - component: {fileID: 7791785790061774775}
   - component: {fileID: 7791785790061774772}
+  - component: {fileID: 2297111561799129159}
   m_Layer: 0
   m_Name: renderer
   m_TagString: Untagged
@@ -210,6 +225,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2297111561799129159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7791785790061774773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e12e787267acb344b8d0b137c6e2ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: f48c11c1d88e39a49b5a727880050983, type: 2}
 --- !u!1 &7791785790598063365
 GameObject:
   m_ObjectHideFlags: 0

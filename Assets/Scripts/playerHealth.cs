@@ -52,6 +52,11 @@ public class playerHealth : MonoBehaviour
                 hearts[i].GetComponent<Image>().enabled = false;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            takeDamage();
+        }
     }
 
     int CompareObNames(GameObject x, GameObject y)
@@ -62,6 +67,11 @@ public class playerHealth : MonoBehaviour
     public void takeDamage()
     {
         health -= 1;
+        SimpleFlash[] flash = GetComponentsInChildren<SimpleFlash>();
+        foreach (SimpleFlash f in flash) 
+        {
+            f.Flash(1.0f, 2, true);
+        }
     }
 
     void gainHealth()
