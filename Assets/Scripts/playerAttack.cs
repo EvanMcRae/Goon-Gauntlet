@@ -54,7 +54,7 @@ public class playerAttack : MonoBehaviour
         //StartCoroutine(PerformAttack());
     }
 
-    void rollDice()
+    public void rollDice()
     {
         int picked = 0;
         do {

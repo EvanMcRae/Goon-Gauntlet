@@ -24,14 +24,15 @@ public class meleeAttack : StateMachineBehaviour
     {
         if (Vector2.Distance(player.position, rb.position) <= attackRange)
         {
-            animator.SetTrigger("lunge");
+            animator.SetTrigger("playerinrange");
+            //animator.SetTrigger("lunge");
         }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("lunge");
+        animator.ResetTrigger("playerinrange");
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
