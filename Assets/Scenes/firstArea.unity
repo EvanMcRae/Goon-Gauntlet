@@ -291,6 +291,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &231036810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7791785790598063365, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
+  m_PrefabInstance: {fileID: 1610772962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &579620941
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +845,7 @@ MonoBehaviour:
   enemies: 3
   counter: 0
   enemy1prefab: {fileID: 5242123242753296884, guid: 389655989876d924dba094ed68de6203, type: 3}
+  player: {fileID: 231036810}
 --- !u!1001 &1610772962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1009,6 +1015,10 @@ PrefabInstance:
     - target: {fileID: 1997999736619233521, guid: 5c6d4c9c82d3a76498654529d936d970, type: 3}
       propertyPath: m_Name
       value: dummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997999736619233521, guid: 5c6d4c9c82d3a76498654529d936d970, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7376830920436098837, guid: 5c6d4c9c82d3a76498654529d936d970, type: 3}
       propertyPath: m_RootOrder
