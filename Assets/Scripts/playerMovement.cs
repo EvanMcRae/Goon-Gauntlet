@@ -9,9 +9,8 @@ public class playerMovement : MonoBehaviour
     private float moveSpeed = 5f;
 
     public Rigidbody2D rb;
-    public Animator animator;
-    public RuntimeAnimatorController normalAnimator, attackAnimator;
-
+    public Animator animator, weaponAnimator;
+    
     Vector2 movement;
 
     public float dashSpeed;
@@ -25,7 +24,6 @@ public class playerMovement : MonoBehaviour
     void Start()
     {
         dashTime = startDashTime;
-        animator.runtimeAnimatorController = normalAnimator;
     }
 
     // Update is called once per frame
@@ -84,18 +82,8 @@ public class playerMovement : MonoBehaviour
         }
         
         animator.SetInteger("direction", direction);
+        weaponAnimator.SetInteger("direction", direction);
         animator.SetBool("moving", movement.magnitude > 0);
-
-        // TEMP CODE - gets arm moving
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            animator.runtimeAnimatorController = attackAnimator;
-
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            animator.runtimeAnimatorController = normalAnimator;
-        }
     }
 
     private void FixedUpdate()
