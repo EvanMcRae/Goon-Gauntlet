@@ -37,7 +37,7 @@ public class playerMovement : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") == -1)
         {
-            //moving le
+            //moving left
             direction = 1;
         }
         else if (Input.GetAxisRaw("Horizontal") == 1)
@@ -56,7 +56,7 @@ public class playerMovement : MonoBehaviour
 
         if (dashTime <= 0)
         {
-            direction = 0;
+            //direction = 0;
             dashTime = startDashTime;
             moveSpeed = walkSpeed;
         }
@@ -83,20 +83,10 @@ public class playerMovement : MonoBehaviour
             }
         }
         
-        if (movement.y > 0 ) {
-            animator.SetInteger("direction", 2);
-        } else if (movement.y < 0) {
-            animator.SetInteger("direction", 0);
-        }
-
-        if (movement.x > 0) {
-            animator.SetInteger("direction", 1);
-        } else if (movement.x < 0) {
-            animator.SetInteger("direction", 3);
-        }
-
+        animator.SetInteger("direction", direction);
         animator.SetBool("moving", movement.magnitude > 0);
 
+        // TEMP CODE - gets arm moving
         if (Input.GetKeyDown(KeyCode.B))
         {
             animator.runtimeAnimatorController = attackAnimator;
