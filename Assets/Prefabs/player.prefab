@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 4490666878137231950}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 1a2106efeaeb7134183ce35759ca05c4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
   walkSpeed: 5
   rb: {fileID: 7791785790598063364}
   animator: {fileID: 7791785790061774772}
-  weaponAnimator: {fileID: 0}
+  weaponAnimator: {fileID: 1538453274}
   dashSpeed: 50
   startDashTime: 0.1
 --- !u!50 &7791785790598063364
@@ -332,4 +332,4 @@ MonoBehaviour:
   normalAnimator: {fileID: 22100000, guid: e9652d930d7dccb42ba32f548d06468f, type: 2}
   attackAnimator: {fileID: 22100000, guid: bc3b7e992f8760d45940caed085c34ab, type: 2}
   animator: {fileID: 7791785790061774772}
-  weaponAnimator: {fileID: 0}
+  weaponAnimator: {fileID: 1538453274}
