@@ -163,6 +163,8 @@ MonoBehaviour:
   life: 0
   speed: 5
   stoppingDistance: 3
+  force: 8
+  rb: {fileID: 643024407}
 --- !u!212 &643024404
 SpriteRenderer:
   m_ObjectHideFlags: 0

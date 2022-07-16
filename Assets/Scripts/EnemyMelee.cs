@@ -7,10 +7,10 @@ public class EnemyMelee : MonoBehaviour
     public float life;
     public float speed;
     public float stoppingDistance;
-
+    public float force;
     private Transform target;
 
-
+    public Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +50,9 @@ public class EnemyMelee : MonoBehaviour
     {
         //maybe gets players position in a holder, then moves towards it
 
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        Vector3 dir = target.transform.position - transform.position;
+        dir = dir.normalized;
+        GetComponent<Rigidbody>().AddForce(dir * force);
         print("moves toward player");
     }
 }
