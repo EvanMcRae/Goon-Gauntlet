@@ -29,7 +29,7 @@ public class playerHealth : MonoBehaviour
             health = numberOfHearts;
         }
 
-        /*for (int i = 0; i < hearts.Length; i++)
+        for (int i = 0; i < hearts.Length; i++)
         {
 
             if (i < health)
@@ -51,7 +51,7 @@ public class playerHealth : MonoBehaviour
             {
                 hearts[i].GetComponent<Image>().enabled = false;
             }
-        }*/
+        }
     }
 
     int CompareObNames(GameObject x, GameObject y)

@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 4490666878137231950}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 1a2106efeaeb7134183ce35759ca05c4, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 7791785790598063364}
   - component: {fileID: 7791785790598063355}
   - component: {fileID: 1689790651}
+  - component: {fileID: 5611480151028760095}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -262,7 +263,7 @@ MonoBehaviour:
   walkSpeed: 5
   rb: {fileID: 7791785790598063364}
   animator: {fileID: 7791785790061774772}
-  weaponAnimator: {fileID: 1538453274}
+  weaponAnimator: {fileID: 0}
   dashSpeed: 50
   startDashTime: 0.1
 --- !u!50 &7791785790598063364
@@ -306,8 +307,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  fullHeart: {fileID: 21300000, guid: 2e85602892765144a88d961d8ed79ba4, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 621d9f26b43ca9b4f804814435401d23, type: 3}
+  fullHeart: {fileID: 21300000, guid: f55afe0c6368f09458c487023c95c8b1, type: 3}
+  emptyHeart: {fileID: 21300000, guid: 14eadc961f1a991429f2bec11e691ec8, type: 3}
 --- !u!114 &1689790651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,4 +333,22 @@ MonoBehaviour:
   normalAnimator: {fileID: 22100000, guid: e9652d930d7dccb42ba32f548d06468f, type: 2}
   attackAnimator: {fileID: 22100000, guid: bc3b7e992f8760d45940caed085c34ab, type: 2}
   animator: {fileID: 7791785790061774772}
+  weaponAnimator: {fileID: 0}
+--- !u!114 &5611480151028760095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7791785790598063365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5452e8c7e0df36f439ac0e769d20d01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: 0
+  weaponAnimators: []
+  normalAnimator: {fileID: 22100000, guid: e9652d930d7dccb42ba32f548d06468f, type: 2}
+  attackAnimator: {fileID: 22100000, guid: bc3b7e992f8760d45940caed085c34ab, type: 2}
+  animator: {fileID: 0}
   weaponAnimator: {fileID: 1538453274}
