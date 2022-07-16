@@ -52,7 +52,7 @@ public class EnemyMelee : MonoBehaviour
 
         Vector3 dir = target.transform.position - transform.position;
         dir = dir.normalized;
-        GetComponent<Rigidbody>().AddForce(dir * force);
+        GetComponent<Rigidbody2D>().AddForce(dir * force);
         print("moves toward player");
     }
 }
