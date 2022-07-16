@@ -9,10 +9,8 @@ public class playerMovement : MonoBehaviour
     private float moveSpeed = 5f;
 
     public Rigidbody2D rb;
-    private Animator animator;
+    public Animator animator;
     public RuntimeAnimatorController normalAnimator, attackAnimator;
-
-
 
     Vector2 movement;
 
@@ -21,11 +19,12 @@ public class playerMovement : MonoBehaviour
     public float startDashTime;
     private int direction;
 
+    private bool attacking;
+
     // Start is called before the first frame update
     void Start()
     {
         dashTime = startDashTime;
-        animator = GetComponent<Animator>();
         animator.runtimeAnimatorController = normalAnimator;
     }
 
@@ -101,6 +100,7 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             animator.runtimeAnimatorController = attackAnimator;
+
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
