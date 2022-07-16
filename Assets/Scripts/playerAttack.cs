@@ -16,6 +16,9 @@ public class playerAttack : MonoBehaviour
     public RuntimeAnimatorController normalAnimator, attackAnimator;
     public Animator animator, weaponAnimator;
 
+    public Transform attackPoint;
+    public LayerMask enemyLayers;
+    public float attackRange = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +66,9 @@ public class playerAttack : MonoBehaviour
 
     IEnumerator PerformAttack()
     {
+        //detect which weapon is selected
+        //detect what direction the player is facing
+        Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         yield return null;
     }
 }

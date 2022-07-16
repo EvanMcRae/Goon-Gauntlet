@@ -847,6 +847,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1689790651, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
+      propertyPath: attackPoint
+      value: 
+      objectReference: {fileID: 1610772963}
+    - target: {fileID: 1689790651, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
+      propertyPath: enemyLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 7791785790598063365, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: m_Name
       value: player
@@ -897,6 +905,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
+--- !u!4 &1610772963 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1972406623057866339, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
+  m_PrefabInstance: {fileID: 1610772962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1689790655 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7791785790598063366, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}

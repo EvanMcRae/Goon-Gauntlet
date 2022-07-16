@@ -16,7 +16,7 @@ public class playerMovement : MonoBehaviour
     public float dashSpeed;
     private float dashTime;
     public float startDashTime;
-    private int direction;
+    public int direction;
 
     private bool attacking;
 
