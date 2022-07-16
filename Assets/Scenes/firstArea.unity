@@ -892,10 +892,10 @@ PrefabInstance:
     - target: {fileID: 1538453274, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 9f28367ef8974eb408b8fbc325607bbb, type: 2}
+      objectReference: {fileID: 22100000, guid: db6f48278e122b341896ce85dc7501fa, type: 2}
     - target: {fileID: 1689790651, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: weapon
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1972406623057866339, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: m_LocalPosition.x
