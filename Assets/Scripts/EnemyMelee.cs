@@ -11,6 +11,8 @@ public class EnemyMelee : MonoBehaviour
     private Transform target;
 
     public Rigidbody2D rb;
+
+    public static bool movement = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,13 +22,13 @@ public class EnemyMelee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector2.Distance(transform.position, target.position) > stoppingDistance)
+        if (Vector2.Distance(transform.position, target.position) > stoppingDistance && movement == true)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
         else
         {
-            //start lunge animation
+            movement = false;
         }
     }
 
@@ -55,4 +57,17 @@ public class EnemyMelee : MonoBehaviour
         GetComponent<Rigidbody2D>().AddForce(dir * force);
         print("moves toward player");
     }
+
+    void moveAgain()
+    {
+        movement = true;
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("goon collided with " + col.name);
+        //damage player
+
+    }
+
 }
