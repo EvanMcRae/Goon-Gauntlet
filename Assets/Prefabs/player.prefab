@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4490666878137231950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.48}
+  m_Size: {x: 0.4, y: 0.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 4490666878137231950}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 0673b2e0677941643a4d3a2b66d569bd, type: 2}
+  m_Controller: {fileID: 22100000, guid: 1a2106efeaeb7134183ce35759ca05c4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5452e8c7e0df36f439ac0e769d20d01b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: 5
+  weapon: 0
   weaponAnimators:
   - {fileID: 22100000, guid: 1a2106efeaeb7134183ce35759ca05c4, type: 2}
   - {fileID: 22100000, guid: 1a3d4b6c1db972941a36b4e3d63d42bd, type: 2}

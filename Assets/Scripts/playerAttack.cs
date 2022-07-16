@@ -30,6 +30,7 @@ public class playerAttack : MonoBehaviour
             Attack();
         }
     
+        // TEMP - resetting attack display
         if (Input.GetKeyDown(KeyCode.C))
         {
             animator.runtimeAnimatorController = normalAnimator;
@@ -52,7 +53,10 @@ public class playerAttack : MonoBehaviour
 
     void rollDice()
     {
-        int picked = Random.Range(1, 7);
+        int picked = 0;
+        do {
+            picked = Random.Range(1, 7);
+        } while (picked == (int) weapon);
         weapon = (playerAttack.Weapon) picked;
         weaponAnimator.runtimeAnimatorController = weaponAnimators[(int) weapon];
     }
