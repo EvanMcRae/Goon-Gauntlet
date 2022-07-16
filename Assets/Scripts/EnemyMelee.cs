@@ -28,7 +28,7 @@ public class EnemyMelee : MonoBehaviour
         }
         else
         {
-            movement = false;
+            //movement = false;
         }
         
         GetComponent<SpriteRenderer>().flipX = target.position.x - transform.position.x < 0;

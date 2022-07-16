@@ -24,7 +24,14 @@ public class meleeAttack : StateMachineBehaviour
     {
         if (Vector2.Distance(player.position, rb.position) <= attackRange)
         {
-            animator.SetTrigger("playerinrange");
+            int x = Random.Range(1, 4);
+            if (x == 1)
+            {
+                animator.SetTrigger("playerinrange");
+                EnemyMelee.movement = false;
+            }
+            //animator.SetTrigger("playerinrange");
+            //EnemyMelee.movement = false;
             //animator.SetTrigger("lunge");
         }
     }
