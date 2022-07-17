@@ -1602,4 +1602,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press 'Space' to dash and avoid enemies!
+  m_Text: Press 'Space' or 'A' button to dash and avoid enemies!
