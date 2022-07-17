@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class waveSpawner : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class waveSpawner : MonoBehaviour
     public bool nextWave = false;
     public bool won = false;
     public AudioClip nextWaveSound;
+
+    public Transform textBox1;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +39,8 @@ public class waveSpawner : MonoBehaviour
         player.GetComponent<playerAttack>().rollDice();
         reqKills = enemies;
         spawnWave(enemies);
+
+        textBox1.position = new Vector3(textBox1.position.x, 5000f, textBox1.position.z);
     }
 
     // Update is called once per frame
@@ -48,6 +53,7 @@ public class waveSpawner : MonoBehaviour
         if(counter >= 10)
         {
             won = true;
+            StartCoroutine(waitAndWin());
         }
 
         bool someoneCanAttack = false;
@@ -92,5 +98,12 @@ public class waveSpawner : MonoBehaviour
         reqKills = enemies;
         spawnWave(enemies);
         nextWave = false;
+    }
+
+    IEnumerator waitAndWin()
+    {
+        textBox1.position = new Vector3(textBox1.position.x, 700f, textBox1.position.z);
+        yield return new WaitForSeconds(4);
+        SceneManager.LoadSceneAsync("menu");
     }
 }
