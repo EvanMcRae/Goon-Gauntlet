@@ -18,7 +18,6 @@ public class particleCleanup : MonoBehaviour
 
     IEnumerator Wait()
     {
-        //print("waiting?");
         yield return new WaitForSeconds(5);
         GameObject.Destroy(gameObject);
     }

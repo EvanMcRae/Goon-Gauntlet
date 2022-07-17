@@ -20,7 +20,6 @@ public class healthPickup : MonoBehaviour
 
     public void despawn()
     {
-        print("tried to despawn");
         GameObject.Destroy(gameObject);
     }
 

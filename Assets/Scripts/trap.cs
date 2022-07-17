@@ -24,34 +24,10 @@ public class trap : MonoBehaviour
         
     }
 
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Player"))
-        {
-            print("trapdoor stepped on");
-            if (killMode == false)
-            {
-                StartCoroutine(Wait());
-            }
-            else
-            {
-                if (collision.gameObject.CompareTag("Enemy"))
-                {
-                    collision.GetComponent<EnemyMelee>().ApplyDamage(3);
-                }
-                else if (collision.gameObject.CompareTag("Player"))
-                {
-                    collision.GetComponent<playerHealth>().takeDamage();
-                }
-            }
-        }
-    }*/
-
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Player"))
         {
-            //print("trapdoor stepped on");
             if (!killMode)
             {
                 if (!waiting)
@@ -78,7 +54,6 @@ public class trap : MonoBehaviour
     {
         PlaySound(stepSound);
         waiting = true;
-        //print("waiting?");
         yield return new WaitForSeconds(2f);
         PlaySound(openSound);
         sr.enabled = false;

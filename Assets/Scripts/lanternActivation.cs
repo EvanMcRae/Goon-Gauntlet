@@ -37,7 +37,6 @@ public class lanternActivation : MonoBehaviour
 
     IEnumerator Wait()
     {
-        //print("waiting?");
         yield return new WaitForSeconds(4);
         textBox.position = new Vector3(textBox.position.x, 5000f, textBox.position.z);
         if(textBox == textBox1)

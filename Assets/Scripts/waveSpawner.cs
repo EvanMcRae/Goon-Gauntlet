@@ -43,13 +43,11 @@ public class waveSpawner : MonoBehaviour
     {
         if (kills >= reqKills && !nextWave && !won)
         {
-            //Debug.Log(kills + " " + reqKills);
             StartCoroutine(waitAndSpawn());
         }
         if(counter >= 10)
         {
             won = true;
-            print("beat the game");
         }
 
         bool someoneCanAttack = false;

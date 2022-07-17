@@ -49,10 +49,7 @@ public class EnemyMelee : MonoBehaviour
     }
 
     public void ApplyDamage(float damage)
-    {
-        // MethodBase methodBase = MethodBase.GetCurrentMethod();
-        // Debug.Log(methodBase.Name);
-        
+    {       
         if (!dead)
         {
             damage = Mathf.Abs(damage);
@@ -116,7 +113,6 @@ public class EnemyMelee : MonoBehaviour
         Vector3 dir = target.transform.position - transform.position;
         dir = dir.normalized;
         GetComponent<Rigidbody2D>().AddForce(dir * force);
-       // print("moves toward player");
     }
 
     void moveAgain()

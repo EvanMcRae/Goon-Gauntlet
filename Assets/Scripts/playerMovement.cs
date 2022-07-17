@@ -76,7 +76,6 @@ public class playerMovement : MonoBehaviour
                     GetComponent<playerAttack>().PlaySound(dashSound);
                     moveSpeed = dashSpeed;
                     Instantiate(dashEffect, new Vector3(transform.position.x, transform.position.y, -6f), Quaternion.identity);
-                    //print("try to dash left");
                 }
                 else if (direction == 2 && Input.GetKeyDown(KeyCode.Space))
                 {

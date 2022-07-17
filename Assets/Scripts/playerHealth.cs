@@ -129,7 +129,6 @@ public class playerHealth : MonoBehaviour
 
         if (collision.gameObject.CompareTag("lantern"))
         {
-            //print("touched lantern");
             collision.gameObject.GetComponent<lanternActivation>().bringDownText();
             GetComponent<playerAttack>().PlaySound(lanternSound);
         }
