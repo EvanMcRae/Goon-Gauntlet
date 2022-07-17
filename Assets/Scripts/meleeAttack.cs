@@ -5,7 +5,7 @@ using UnityEngine;
 public class meleeAttack : StateMachineBehaviour
 {
     //public float speed = 2.5f;
-    public float attackRange = 3f;
+    public float attackRange = 5f;
 
     Transform player;
     Rigidbody2D rb;
@@ -31,7 +31,7 @@ public class meleeAttack : StateMachineBehaviour
                 EnemyMelee.movement = false;
             }*/
             animator.SetTrigger("playerinrange");
-            EnemyMelee.movement = false;
+            EM.movement = false;
             //animator.SetTrigger("lunge");
         }
     }

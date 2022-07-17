@@ -12,8 +12,9 @@ public class EnemyMelee : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    public static bool movement = true;
+    public bool movement = true;
     public bool canAttack = false;
+    private bool stunned = false;
 
 
     private IEnumerator coru1;
@@ -26,9 +27,7 @@ public class EnemyMelee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(movement);
-
-        if (Vector2.Distance(transform.position, target.position) > stoppingDistance && movement == true)
+        if (Vector2.Distance(transform.position, target.position) > stoppingDistance && movement && !stunned)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
@@ -74,20 +73,26 @@ public class EnemyMelee : MonoBehaviour
     void lunge()
     {
         //maybe gets players position in a holder, then moves towards it
-
         Vector3 dir = target.transform.position - transform.position;
         dir = dir.normalized;
         GetComponent<Rigidbody2D>().AddForce(dir * force);
-        //print("moves toward player");
+        print("moves toward player");
     }
 
     void moveAgain()
     {
-        if(movement == false)
+        if (!movement)
         {
             movement = true;
             rb.velocity = new Vector2(0f,0f);
         }
+    }
+
+    void allowAttacking()
+    {
+        canAttack = true;
+        movement = false;
+        rb.velocity = new Vector2(0f, 0f);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -95,13 +100,17 @@ public class EnemyMelee : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && canAttack)
         {
             target.GetComponent<playerHealth>().takeDamage();
+            canAttack = false;
+            GetComponent<Animator>().SetTrigger("slam");
         }
     }
 
     IEnumerator stunAndwWait()
     {
+        stunned = true;
         rb.velocity = new Vector2(0f, 0f);
         yield return new WaitForSeconds(5);
+        stunned = false;
     }
 
 }
