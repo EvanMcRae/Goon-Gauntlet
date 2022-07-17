@@ -79,4 +79,13 @@ public class playerHealth : MonoBehaviour
         health += 1;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("healthPack"))
+        {
+            print("picked up health pack");
+            gainHealth();
+            collision.gameObject.GetComponent<healthPickup>().despawn();
+        }
+    }
 }
