@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class lanternActivation : MonoBehaviour
 {
-    public Transform textBox;
+    private Transform textBox;
 
+    public Transform textBox1;
+    public Transform textBox2;
+    public Transform textBox3;
     //public Transform anchor;
     private IEnumerator coru;
     // Start is called before the first frame update
     void Start()
     {
+        textBox = textBox1;
         textBox.position = new Vector3(textBox.position.x, 5000f, textBox.position.z);
         coru = Wait();
     }
@@ -28,7 +32,6 @@ public class lanternActivation : MonoBehaviour
             textBox.position = new Vector3(textBox.position.x, 900f, textBox.position.z);
             StartCoroutine(Wait());
         }
-        
     }
 
     IEnumerator Wait()
@@ -36,6 +39,18 @@ public class lanternActivation : MonoBehaviour
         //print("waiting?");
         yield return new WaitForSeconds(4);
         textBox.position = new Vector3(textBox.position.x, 5000f, textBox.position.z);
+        if(textBox == textBox1)
+        {
+            textBox = textBox2;
+        }
+        else if(textBox == textBox2)
+        {
+            textBox = textBox3;
+        }
+        else if(textBox == textBox3)
+        {
+            textBox = textBox1;
+        }
     }
 
 }
