@@ -59,11 +59,12 @@ public class playerAttack : MonoBehaviour
                     {
                         // TODO how to differentiate claw?
                         enemy.GetComponent<EnemyMelee>().ApplyDamage(1);
+                        enemy.GetComponent<EnemyMelee>().stun();
                         attacking = false;
                     }
-                    else if(weapon == Weapon.SCISSORS)
+                    else if(weapon == Weapon.GLOVE)
                     {
-                        // TODO add enemy knockback
+                        enemy.GetComponent<EnemyMelee>().knockBack();
                         enemy.GetComponent<EnemyMelee>().ApplyDamage(1);
                         attacking = false;
                     }
