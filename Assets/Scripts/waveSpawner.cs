@@ -76,7 +76,8 @@ public class waveSpawner : MonoBehaviour
         {
             float randomX = Random.Range(-18f, 18f);
             float randomY = Random.Range(-9f, 9f);
-            Instantiate(enemy1prefab, new Vector3(randomX, randomY), new Quaternion(0f, 0f, 0f, 0f));
+            GameObject enemy = Instantiate(enemy1prefab, new Vector3(randomX, randomY), new Quaternion(0f, 0f, 0f, 0f));
+            enemy.GetComponent<EnemyMelee>().life += counter;
         }
     }
 
