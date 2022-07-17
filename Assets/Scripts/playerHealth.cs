@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class playerHealth : MonoBehaviour
 {
@@ -96,9 +98,10 @@ public class playerHealth : MonoBehaviour
     IEnumerator Die()
     {
         textBox.position = new Vector3(textBox.position.x, 700f, textBox.position.z);
-        yield return new WaitForSeconds(3);
-        GameObject.Destroy(gameObject);
         yield return new WaitForSeconds(4);
+        //GameObject.Destroy(gameObject);
+        //yield return new WaitForSeconds(4);
+        SceneManager.LoadScene("menu");
     }
 
     void gainHealth()
