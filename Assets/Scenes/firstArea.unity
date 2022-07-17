@@ -1005,30 +1005,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 303218588, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 44.1017
-      objectReference: {fileID: 0}
-    - target: {fileID: 303218588, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 686.21655
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095465007, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 42.012
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095465007, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 584.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 1745715863, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 42.0115
-      objectReference: {fileID: 0}
-    - target: {fileID: 1745715863, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 584.2178
-      objectReference: {fileID: 0}
     - target: {fileID: 1199880260002485267, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1244,14 +1220,6 @@ PrefabInstance:
     - target: {fileID: 7513690539372815988, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7726857918383643644, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 26.7554
-      objectReference: {fileID: 0}
-    - target: {fileID: 7726857918383643644, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 301.1917
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
