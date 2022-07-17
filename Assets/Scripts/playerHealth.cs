@@ -17,6 +17,8 @@ public class playerHealth : MonoBehaviour
     public bool invincible = false;
 
     public Transform textBox;
+    public AudioClip hurtSound, deadSound, pickupSound, lanternSound;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +81,11 @@ public class playerHealth : MonoBehaviour
             if(health <= 0)
             {
                 StartCoroutine(Die());
+                GetComponent<playerAttack>().PlaySound(deadSound);
+            }
+            else
+            {
+                GetComponent<playerAttack>().PlaySound(hurtSound);
             }
         }
     }
@@ -110,12 +117,14 @@ public class playerHealth : MonoBehaviour
         {
             gainHealth();
             collision.gameObject.GetComponent<healthPickup>().despawn();
+            GetComponent<playerAttack>().PlaySound(pickupSound);
         }
 
         if (collision.gameObject.CompareTag("lantern"))
         {
             //print("touched lantern");
             collision.gameObject.GetComponent<lanternActivation>().bringDownText();
+            GetComponent<playerAttack>().PlaySound(lanternSound);
         }
     }
 }

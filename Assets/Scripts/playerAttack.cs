@@ -25,11 +25,14 @@ public class playerAttack : MonoBehaviour
     public Sprite[] weaponSprites;
     public Sprite abilityOn, abilityCooldown;
     public float attackCooldown = 0.5f;
+    private AudioSource[] sources;
+    public AudioClip[] weaponSounds;
 
     public GameObject prefab;
     // Start is called before the first frame update
     void Start()
     {
+        sources = transform.GetComponents<AudioSource>();
         animator.runtimeAnimatorController = normalAnimator;
         attacking = false;
         visualAttacking = false;
@@ -119,6 +122,7 @@ public class playerAttack : MonoBehaviour
         visualAttacking = true;
         animator.runtimeAnimatorController = attackAnimator;
         weaponAnimator.SetBool("attack", true);
+        PlaySound(weaponSounds[(int)weapon]);
         float duration = 0.0f;
         switch (weapon)
         {
@@ -165,6 +169,28 @@ public class playerAttack : MonoBehaviour
         else if (weapon == Weapon.MAGNET)
         {
             attackRange = 3f;
+        }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        foreach (AudioSource source in sources)
+        {
+            if (source.clip == clip && source.isPlaying)
+            {
+                if (source.time < 0.2f && source.isPlaying) return;
+                else source.Stop();
+            }
+        }
+        for (int index = sources.Length - 1; index >= 0; index--)
+        {
+            if (!sources[index].isPlaying)
+            {
+                sources[index].clip = clip;
+                sources[index].loop = false;
+                sources[index].Play();
+                return;
+            }
         }
     }
 }
