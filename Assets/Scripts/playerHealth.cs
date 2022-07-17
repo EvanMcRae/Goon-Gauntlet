@@ -14,10 +14,11 @@ public class playerHealth : MonoBehaviour
     public Sprite emptyHeart;
     public bool invincible = false;
 
+    public Transform textBox;
     // Start is called before the first frame update
     void Start()
     {
-        
+        textBox.position = new Vector3(textBox.position.x, 5000f, textBox.position.z);
     }
 
     // Update is called once per frame
@@ -77,6 +78,11 @@ public class playerHealth : MonoBehaviour
                 f.Flash(1f, 2, false);
             }
             StartCoroutine(MakeInvincible(0.5f));
+
+            if(health <= 0)
+            {
+                StartCoroutine(Die());
+            }
         }
     }
 
@@ -85,6 +91,14 @@ public class playerHealth : MonoBehaviour
         invincible = true;
         yield return new WaitForSeconds(time);
         invincible = false;
+    }
+
+    IEnumerator Die()
+    {
+        textBox.position = new Vector3(textBox.position.x, 700f, textBox.position.z);
+        yield return new WaitForSeconds(3);
+        GameObject.Destroy(gameObject);
+        yield return new WaitForSeconds(4);
     }
 
     void gainHealth()
