@@ -65,7 +65,7 @@ public class EnemyMelee : MonoBehaviour
             {
                 waveSpawner.kills++;
                 dead = true;
-                int x = Random.Range(0, 6);
+                int x = Random.Range(0, 5);
                 if(x == 1)
                 {
                     GameObject obj = Instantiate(prefab, transform.position, Quaternion.identity);
@@ -105,7 +105,7 @@ public class EnemyMelee : MonoBehaviour
 
     public void stun()
     {
-        coru1 = stunAndwWait();
+        coru1 = stunAndWait();
         StartCoroutine(coru1);
     }
 
@@ -141,7 +141,7 @@ public class EnemyMelee : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player") && canAttack && !dead)
         {
@@ -151,7 +151,7 @@ public class EnemyMelee : MonoBehaviour
         }
     }
 
-    IEnumerator stunAndwWait()
+    IEnumerator stunAndWait()
     {
         stunned = true;
         rb.velocity = new Vector2(0f, 0f);

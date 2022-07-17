@@ -101,6 +101,7 @@ public class playerHealth : MonoBehaviour
     IEnumerator Die()
     {
         dead = true;
+        GetComponent<playerAttack>().death();
         GetComponent<Rigidbody2D>().isKinematic = true;
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         GetComponent<Collider2D>().enabled = false;
@@ -109,7 +110,7 @@ public class playerHealth : MonoBehaviour
         yield return new WaitForSeconds(4);
         //GameObject.Destroy(gameObject);
         //yield return new WaitForSeconds(4);
-        SceneManager.LoadScene("menu");
+        SceneManager.LoadSceneAsync("menu");
     }
 
     void gainHealth()

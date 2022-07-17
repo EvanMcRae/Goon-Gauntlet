@@ -155,6 +155,15 @@ public class playerAttack : MonoBehaviour
         attacking = false;
     }
 
+    public void death()
+    {
+        animator.runtimeAnimatorController = normalAnimator;
+        weaponAnimator.SetBool("attack", false);
+        visualAttacking = false;
+        attacking = false;
+        animator.SetBool("dead", true);
+    }
+
     public void rollDice()
     {
         StartCoroutine(diceRoll());
