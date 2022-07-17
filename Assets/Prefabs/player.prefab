@@ -305,6 +305,7 @@ MonoBehaviour:
   startDashTime: 0.1
   direction: 0
   dashEffect: {fileID: 4902285141213324099, guid: 6aaf8f2b27856f04ca3af384293bba24, type: 3}
+  dashSound: {fileID: 8300000, guid: ec7e7858bf0640146a1c0f5bb03172db, type: 3}
 --- !u!50 &7791785790598063364
 Rigidbody2D:
   serializedVersion: 4
