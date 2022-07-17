@@ -115,11 +115,13 @@ MonoBehaviour:
   rb: {fileID: 5242123242753296881}
   movement: 1
   canAttack: 0
+  dead: 0
   chance: 3
   prefab: {fileID: 9119256722457401578, guid: 846bb98963d0d684885617696f43ac26, type: 3}
   hurtSound: {fileID: 8300000, guid: ae9afb1911e1ddd47a7031372ee49dfd, type: 3}
   deathSound: {fileID: 8300000, guid: 0faaef67fc6f61240bb1a30c0b49acd7, type: 3}
   lungeSound: {fileID: 8300000, guid: 31e81f24971bb8d46979f478e2bf7fd3, type: 3}
+  healthEffect: {fileID: 3206012138063972680, guid: 8db9f01680ce60046b2fb920116c5d6b, type: 3}
 --- !u!95 &5242123242753296880
 Animator:
   serializedVersion: 4
