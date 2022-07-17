@@ -68,6 +68,20 @@ public class EnemyMelee : MonoBehaviour
         GetComponent<Rigidbody2D>().AddForce(dir * -force);
     }
 
+    public void fanPush()
+    {
+        Vector3 dir = target.transform.position - transform.position;
+        dir = dir.normalized;
+        GetComponent<Rigidbody2D>().AddForce(dir * -(force-380));
+    }
+
+    public void magnetPull()
+    {
+        Vector3 dir = target.transform.position - transform.position;
+        dir = dir.normalized;
+        GetComponent<Rigidbody2D>().AddForce(dir * (force - 398));
+    }
+
     public void stun()
     {
         coru1 = stunAndwWait();
@@ -80,7 +94,7 @@ public class EnemyMelee : MonoBehaviour
         Vector3 dir = target.transform.position - transform.position;
         dir = dir.normalized;
         GetComponent<Rigidbody2D>().AddForce(dir * force);
-        print("moves toward player");
+       // print("moves toward player");
     }
 
     void moveAgain()

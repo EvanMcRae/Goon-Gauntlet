@@ -76,16 +76,21 @@ public class playerHealth : MonoBehaviour
 
     void gainHealth()
     {
-        health += 1;
+        health += 2;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("healthPack"))
+        if (collision.gameObject.CompareTag("healthPack"))
         {
-            print("picked up health pack");
             gainHealth();
             collision.gameObject.GetComponent<healthPickup>().despawn();
+        }
+
+        if (collision.gameObject.CompareTag("lantern"))
+        {
+            print("touched lantern");
+            collision.gameObject.GetComponent<lanternActivation>().bringDownText();
         }
     }
 }

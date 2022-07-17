@@ -58,7 +58,7 @@ public class playerAttack : MonoBehaviour
 
                 foreach (Collider2D enemy in hitEnemies)
                 {
-                    Debug.Log("we hit " + enemy.name);
+                   // Debug.Log("we hit " + enemy.name);
                     
 
                     if (weapon == Weapon.CLAW)
@@ -81,11 +81,11 @@ public class playerAttack : MonoBehaviour
                     }
                     else if (weapon == Weapon.FAN)
                     {
-                        // TODO blow enemies in close range back
+                        enemy.GetComponent<EnemyMelee>().fanPush();
                     }
                     else if (weapon == Weapon.MAGNET)
                     {
-                        // TODO bring enemies in far range closer
+                        enemy.GetComponent<EnemyMelee>().magnetPull();
                     }
                 }
             }
@@ -134,5 +134,17 @@ public class playerAttack : MonoBehaviour
         } while (picked == (int) weapon);
         weapon = (Weapon) picked;
         weaponAnimator.runtimeAnimatorController = weaponAnimators[(int) weapon];
+        if(weapon == Weapon.FAN)
+        {
+            attackRange = 1.5f;
+        }
+        else if(weapon == Weapon.SCISSORS || weapon == Weapon.GLOVE || weapon == Weapon.CLAW)
+        {
+            attackRange = .5f;
+        }
+        else if (weapon == Weapon.MAGNET)
+        {
+            attackRange = 3f;
+        }
     }
 }
