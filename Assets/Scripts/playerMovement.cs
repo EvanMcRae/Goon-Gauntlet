@@ -96,10 +96,10 @@ public class playerMovement : MonoBehaviour
             animator.SetBool("moving", movement.magnitude > 0);
         }
 
-        void FixedUpdate()
-        {
-            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        }
+    }
 
+    void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
