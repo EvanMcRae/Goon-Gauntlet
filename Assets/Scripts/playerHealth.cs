@@ -101,6 +101,7 @@ public class playerHealth : MonoBehaviour
     IEnumerator Die()
     {
         dead = true;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         GetComponent<Rigidbody2D>().isKinematic = true;
         GetComponent<Collider2D>().enabled = false;
         GameObject.Find("music").GetComponent<AudioSource>().Stop();

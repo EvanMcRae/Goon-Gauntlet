@@ -187,6 +187,7 @@ public class EnemyMelee : MonoBehaviour
         GetComponent<Animator>().SetTrigger("dead");
         GetComponent<Collider2D>().enabled = false;
         rb.isKinematic = true;
+        rb.velocity = Vector2.zero;
         // TODO add particles, change animation state, change wait time
         yield return new WaitForSeconds(2.0f);
         GameObject.Destroy(gameObject);
