@@ -1223,11 +1223,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+--- !u!114 &952376571 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5102120037279324838, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+  m_PrefabInstance: {fileID: 952376570}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &952376572 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7726857918383643644, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
   m_PrefabInstance: {fileID: 952376570}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &952376573 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8926427557400428830, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+  m_PrefabInstance: {fileID: 952376570}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1091901874
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,7 +1828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reqKills: 0
   enemies: 3
-  counter: 0
+  counter: 1
   enemy1prefab: {fileID: 5242123242753296884, guid: 389655989876d924dba094ed68de6203, type: 3}
   player: {fileID: 231036810}
   nextWave: 0
@@ -1814,6 +1836,8 @@ MonoBehaviour:
   nextWaveSound: {fileID: 8300000, guid: bfd601e4f357a8d4cae078f7b07e272f, type: 3}
   winSound: {fileID: 8300000, guid: 2f7ea1fd767d10946ae261d82c418bff, type: 3}
   textBox1: {fileID: 1816374290}
+  waveDisplay: {fileID: 952376573}
+  goonDisplay: {fileID: 952376571}
 --- !u!1 &1592020014
 GameObject:
   m_ObjectHideFlags: 0

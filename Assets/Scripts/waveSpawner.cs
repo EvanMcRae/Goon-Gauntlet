@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class waveSpawner : MonoBehaviour
 {
@@ -18,10 +19,15 @@ public class waveSpawner : MonoBehaviour
     public AudioClip nextWaveSound, winSound;
 
     public Transform textBox1;
+    public Text waveDisplay, goonDisplay;
 
     // Start is called before the first frame update
     void Start()
     {
+        counter = 1;
+        kills = 0;
+        reqKills = 3;
+        enemies = 3;
 
         /*
          * surround arena with possible spawn locations, whenever an enemy
@@ -39,22 +45,29 @@ public class waveSpawner : MonoBehaviour
         player.GetComponent<playerAttack>().rollDice();
         reqKills = enemies;
         spawnWave(enemies);
-
+        waveDisplay = GameObject.FindGameObjectWithTag("WaveDisplay").GetComponent<Text>();
+        goonDisplay = GameObject.FindGameObjectWithTag("GoonDisplay").GetComponent<Text>();
         textBox1.position = new Vector3(textBox1.position.x, 5000f, textBox1.position.z);
     }
 
     // Update is called once per frame
     void Update()
     {
+        waveDisplay.text = "Wave " + counter;
+        goonDisplay.text = "Goons remaining: " + (reqKills - kills);
+
+        if (counter == 10 && kills >= reqKills)
+        {
+            won = true;
+            StopCoroutine(waitAndSpawn());
+            StartCoroutine(waitAndWin());
+        }
+
         if (kills >= reqKills && !nextWave && !won)
         {
             StartCoroutine(waitAndSpawn());
         }
-        if(counter >= 10)
-        {
-            won = true;
-            StartCoroutine(waitAndWin());
-        }
+        
 
         bool someoneCanAttack = false;
         EnemyMelee[] enemies = GameObject.FindObjectsOfType<EnemyMelee>();
@@ -81,30 +94,31 @@ public class waveSpawner : MonoBehaviour
             float randomX = Random.Range(-18f, 18f);
             float randomY = Random.Range(-9f, 9f);
             GameObject enemy = Instantiate(enemy1prefab, new Vector3(randomX, randomY), new Quaternion(0f, 0f, 0f, 0f));
-            enemy.GetComponent<EnemyMelee>().life += counter;
+            enemy.GetComponent<EnemyMelee>().life += (counter - 1);
         }
     }
 
     IEnumerator waitAndSpawn()
     {
-        player.GetComponent<playerAttack>().PlaySound(nextWaveSound);
         nextWave = true;
-        counter++;
-        kills = 0;
-        enemies += 2;
         yield return new WaitForSeconds(5);
         player.GetComponent<playerAttack>().rollDice();
         yield return new WaitForSeconds(5);
+        player.GetComponent<playerAttack>().PlaySound(nextWaveSound);
+        counter++;
+        kills = 0;
+        enemies += 2;
         reqKills = enemies;
-        spawnWave(enemies);
+        if (counter <= 10)
+            spawnWave(enemies);
         nextWave = false;
     }
 
     IEnumerator waitAndWin()
     {
         GameObject.Find("Music").GetComponent<AudioSource>().Stop();
-        GameObject.Find("Music").GetComponent<AudioSource>().PlayOneShot(winSound);
-        textBox1.position = new Vector3(textBox1.position.x, 700f, textBox1.position.z);
+        player.GetComponent<playerAttack>().PlaySound(winSound);
+        textBox1.position = new Vector3(textBox1.position.x, 500f, textBox1.position.z);
         yield return new WaitForSeconds(4);
         SceneManager.LoadSceneAsync("menu");
     }

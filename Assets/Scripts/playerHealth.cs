@@ -106,7 +106,7 @@ public class playerHealth : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         GetComponent<Collider2D>().enabled = false;
         GameObject.Find("Music").GetComponent<AudioSource>().Stop();
-        textBox.position = new Vector3(textBox.position.x, 700f, textBox.position.z);
+        textBox.position = new Vector3(textBox.position.x, 500f, textBox.position.z);
         yield return new WaitForSeconds(4);
         //GameObject.Destroy(gameObject);
         //yield return new WaitForSeconds(4);
