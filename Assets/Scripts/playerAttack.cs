@@ -50,7 +50,7 @@ public class playerAttack : MonoBehaviour
 
         weaponDisplay.sprite = weaponSprites[(int) weapon];
 
-        if (Input.GetKeyDown(KeyCode.B) && !visualAttacking && weapon != Weapon.NONE)
+        if ((Input.GetKeyDown(KeyCode.B) || (Input.GetButtonDown("hit"))) && !visualAttacking && weapon != Weapon.NONE)
         {
             Attack();
         }
