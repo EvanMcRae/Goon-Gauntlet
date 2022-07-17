@@ -13,6 +13,8 @@ public class EnemyMelee : MonoBehaviour
     public Rigidbody2D rb;
 
     public static bool movement = true;
+    public bool canAttack = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,8 @@ public class EnemyMelee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(movement);
+
         if (Vector2.Distance(transform.position, target.position) > stoppingDistance && movement == true)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
@@ -40,7 +44,7 @@ public class EnemyMelee : MonoBehaviour
         // Debug.Log(methodBase.Name);
         
         damage = Mathf.Abs(damage);
-        // transform.GetComponent<Animator>().SetBool("Hit", true);
+        transform.GetComponent<Animator>().SetBool("hit", true);
         life -= damage;
         if (life < 0) life = 0;
         GetComponent<SimpleFlash>().Flash(1.0f, 2, true);
@@ -73,7 +77,7 @@ public class EnemyMelee : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && canAttack)
         {
             target.GetComponent<playerHealth>().takeDamage();
         }

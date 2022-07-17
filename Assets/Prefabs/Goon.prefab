@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5242123242753296881}
   - component: {fileID: 5242123242753296894}
   - component: {fileID: 4966201067178858843}
+  - component: {fileID: 4465185224809053970}
   m_Layer: 6
   m_Name: Goon
   m_TagString: Untagged
@@ -146,7 +147,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &5242123242753296894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -154,10 +155,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5242123242753296884}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -186,3 +187,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: f48c11c1d88e39a49b5a727880050983, type: 2}
+--- !u!61 &4465185224809053970
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5242123242753296884}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0059039593, y: -0.0029457808}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.72, y: 0.88}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9552779, y: 1.0586112}
+  m_EdgeRadius: 0
