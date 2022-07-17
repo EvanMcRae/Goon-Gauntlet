@@ -38,19 +38,23 @@ public class playerMovement : MonoBehaviour
         {
             //moving left
             direction = 1;
+            bullet.facingRight = false;
         }
         else if (Input.GetAxisRaw("Horizontal") == 1)
         {
             //moving right
             direction = 2;
+            bullet.facingRight = true;
         }
         else if (Input.GetAxisRaw("Vertical") == 1)
         {
             direction = 3;
+            bullet.facingRight = true;
         }
         else if (Input.GetAxisRaw("Vertical") == -1)
         {
             direction = 4;
+            bullet.facingRight = true;
         }
 
         if (dashTime <= 0)
