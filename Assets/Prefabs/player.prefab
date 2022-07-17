@@ -328,16 +328,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749d99be9b11b344897aedad5d7fe9be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
-  numberOfHearts: 10
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  health: 8
+  numberOfHearts: 8
+  hearts: []
   fullHeart: {fileID: 21300000, guid: f55afe0c6368f09458c487023c95c8b1, type: 3}
   emptyHeart: {fileID: 21300000, guid: 14eadc961f1a991429f2bec11e691ec8, type: 3}
+  invincible: 0
 --- !u!114 &1689790651
 MonoBehaviour:
   m_ObjectHideFlags: 0

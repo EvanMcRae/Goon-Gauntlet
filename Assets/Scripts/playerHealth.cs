@@ -74,9 +74,9 @@ public class playerHealth : MonoBehaviour
             SimpleFlash[] flash = GetComponentsInChildren<SimpleFlash>();
             foreach (SimpleFlash f in flash)
             {
-                f.Flash(2f, 4, false);
+                f.Flash(1f, 2, false);
             }
-            StartCoroutine(MakeInvincible(2f));
+            StartCoroutine(MakeInvincible(1f));
         }
     }
 
@@ -89,7 +89,7 @@ public class playerHealth : MonoBehaviour
 
     void gainHealth()
     {
-        health += 2;
+        health += 1;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

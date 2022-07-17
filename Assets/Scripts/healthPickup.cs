@@ -5,6 +5,8 @@ using UnityEngine;
 public class healthPickup : MonoBehaviour
 {
     private Transform target;
+    public float force;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +16,7 @@ public class healthPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Physics2D.IgnoreCollision("")
     }
 
     public void despawn()
@@ -28,6 +30,13 @@ public class healthPickup : MonoBehaviour
         Vector3 dir = target.transform.position - transform.position;
         dir = dir.normalized;
         GetComponent<Rigidbody2D>().AddForce(dir * (3));
+    }
+
+    public void fanPush()
+    {
+        Vector3 dir = target.transform.position - transform.position;
+        dir = dir.normalized;
+        GetComponent<Rigidbody2D>().AddForce(dir * -(force - 380));
     }
 
 }

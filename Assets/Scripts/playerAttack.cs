@@ -82,7 +82,14 @@ public class playerAttack : MonoBehaviour
                     }
                     else if (weapon == Weapon.FAN)
                     {
-                        enemy.GetComponent<EnemyMelee>().fanPush();
+                        if (enemy.gameObject.CompareTag("healthPack"))
+                        {
+                            enemy.GetComponent<healthPickup>().fanPush();
+                        }
+                        else
+                        {
+                            enemy.GetComponent<EnemyMelee>().fanPush();
+                        }
                     }
                     else if (weapon == Weapon.MAGNET)
                     {
