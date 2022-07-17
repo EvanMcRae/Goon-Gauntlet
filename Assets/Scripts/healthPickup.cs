@@ -7,6 +7,7 @@ public class healthPickup : MonoBehaviour
     private Transform target;
     public float force;
 
+    public GameObject healthEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class healthPickup : MonoBehaviour
 
     public void despawn()
     {
+        Instantiate(healthEffect, new Vector3(transform.position.x, transform.position.y, -6f), Quaternion.identity);
         GameObject.Destroy(gameObject);
     }
 
