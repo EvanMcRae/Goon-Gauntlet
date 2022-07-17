@@ -9,6 +9,7 @@ TagManager:
   - lantern
   - WeaponDisplay
   - Enemy
+  - wall
   layers:
   - Default
   - TransparentFX

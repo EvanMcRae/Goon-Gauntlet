@@ -66,7 +66,7 @@ public class playerMovement : MonoBehaviour
             {
 
                 moveSpeed = dashSpeed;
-                print("try to dash left");
+                //print("try to dash left");
             }
             else if (direction == 2 && Input.GetKeyDown(KeyCode.Space))
             {

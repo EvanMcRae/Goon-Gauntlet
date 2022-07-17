@@ -13,7 +13,20 @@ public class bullet : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
        
-        rb.velocity = new Vector2(2f, 0f);
+        if(player.GetComponent<playerMovement>().direction == 2)
+        {
+            rb.velocity = new Vector2(5f, 0f);
+        }
+        else if(player.GetComponent<playerMovement>().direction == 1)
+        {
+            rb.velocity = new Vector2(-5f, 0f);
+        }
+
+        int x = Random.Range(0, 10);
+        if(x == 1 || x == 0 || x == 2 || x== 3 || x==4 || x==5 || x==6 || x==7 || x==8)
+        {
+            GameObject.Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -26,9 +39,12 @@ public class bullet : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-
             other.GetComponent<EnemyMelee>().ApplyDamage(1);
-            Destroy(gameObject);
+            GameObject.Destroy(gameObject);
+        }
+        else if(other.tag == "wall")
+        {
+            GameObject.Destroy(gameObject);
         }
     }
 }
