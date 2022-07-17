@@ -15,7 +15,7 @@ public class waveSpawner : MonoBehaviour
     private IEnumerator coru;
     public bool nextWave = false;
     public bool won = false;
-    public AudioClip nextWaveSound;
+    public AudioClip nextWaveSound, winSound;
 
     public Transform textBox1;
 
@@ -102,6 +102,8 @@ public class waveSpawner : MonoBehaviour
 
     IEnumerator waitAndWin()
     {
+        GameObject.Find("Music").GetComponent<AudioSource>().Stop();
+        GameObject.Find("Music").GetComponent<AudioSource>().PlayOneShot(winSound);
         textBox1.position = new Vector3(textBox1.position.x, 700f, textBox1.position.z);
         yield return new WaitForSeconds(4);
         SceneManager.LoadSceneAsync("menu");

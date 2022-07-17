@@ -444,7 +444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -469, y: 139.25726}
+  m_AnchoredPosition: {x: -469, y: 142}
   m_SizeDelta: {x: 315.5283, y: 143.0558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &794098849
@@ -482,9 +482,9 @@ MonoBehaviour:
     m_LineSpacing: 1.4
   m_Text: 'B: ATTACK
 
-    SPACE: DASH
+    SPACE/RT: DASH
 
-    WASD: MOVE'
+    WASD/LS: MOVE'
 --- !u!222 &794098850
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -726,9 +726,9 @@ MonoBehaviour:
     m_LineSpacing: 1.4
   m_Text: 'B: ATTACK
 
-    SPACE: DASH
+    SPACE/RT: DASH
 
-    WASD: MOVE'
+    WASD/LS: MOVE'
 --- !u!222 &1012058800
 CanvasRenderer:
   m_ObjectHideFlags: 0

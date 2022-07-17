@@ -28,9 +28,9 @@ public class lanternActivation : MonoBehaviour
 
     public void bringDownText()
     {
-        if(textBox.position.y > 900f)
+        if(textBox.position.y > 850f)
         {
-            textBox.position = new Vector3(textBox.position.x, 900f, textBox.position.z);
+            textBox.position = new Vector3(textBox.position.x, 850f, textBox.position.z);
             StartCoroutine(Wait());
         }
     }

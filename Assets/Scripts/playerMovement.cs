@@ -71,25 +71,25 @@ public class playerMovement : MonoBehaviour
             else
             {
                 dashTime -= Time.deltaTime;
-                if (direction == 1 && Input.GetKeyDown(KeyCode.Space))
+                if (direction == 1 && Input.GetKeyDown(KeyCode.Space) && movement.magnitude > 0)
                 {
                     GetComponent<playerAttack>().PlaySound(dashSound);
                     moveSpeed = dashSpeed;
                     Instantiate(dashEffect, new Vector3(transform.position.x, transform.position.y, -6f), Quaternion.identity);
                 }
-                else if (direction == 2 && Input.GetKeyDown(KeyCode.Space))
+                else if (direction == 2 && Input.GetKeyDown(KeyCode.Space) && movement.magnitude > 0)
                 {
                     GetComponent<playerAttack>().PlaySound(dashSound);
                     moveSpeed = dashSpeed;
                     Instantiate(dashEffect, new Vector3(transform.position.x, transform.position.y, -6f), Quaternion.identity);
                 }
-                else if (direction == 3 && Input.GetKeyDown(KeyCode.Space))
+                else if (direction == 3 && Input.GetKeyDown(KeyCode.Space) && movement.magnitude > 0)
                 {
                     GetComponent<playerAttack>().PlaySound(dashSound);
                     moveSpeed = dashSpeed;
                     Instantiate(dashEffect, new Vector3(transform.position.x, transform.position.y, -6f), Quaternion.identity);
                 }
-                else if (direction == 4 && Input.GetKeyDown(KeyCode.Space))
+                else if (direction == 4 && Input.GetKeyDown(KeyCode.Space) && movement.magnitude > 0)
                 {
                     GetComponent<playerAttack>().PlaySound(dashSound);
                     moveSpeed = dashSpeed;

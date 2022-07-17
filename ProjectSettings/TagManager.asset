@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - wall
   - WeaponBackground
+  - DiceDisplay
+  - WeaponName
   layers:
   - Default
   - TransparentFX
