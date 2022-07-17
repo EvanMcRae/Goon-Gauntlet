@@ -110,6 +110,7 @@ MonoBehaviour:
   movement: 1
   canAttack: 0
   chance: 3
+  prefab: {fileID: 9119256722457401578, guid: 846bb98963d0d684885617696f43ac26, type: 3}
 --- !u!95 &5242123242753296880
 Animator:
   serializedVersion: 4

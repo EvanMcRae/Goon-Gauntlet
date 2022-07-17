@@ -19,6 +19,8 @@ public class EnemyMelee : MonoBehaviour
     public int chance = 3;
 
     private IEnumerator coru1;
+
+    public GameObject prefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +59,11 @@ public class EnemyMelee : MonoBehaviour
             if (!dead)
                 waveSpawner.kills++;
             dead = true;
+            int x = Random.Range(0, 5);
+            if(x == 1)
+            {
+                GameObject obj = Instantiate(prefab, transform.position, Quaternion.identity);
+            }
             GameObject.Destroy(gameObject);
         }
     }

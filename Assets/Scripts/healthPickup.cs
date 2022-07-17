@@ -27,7 +27,7 @@ public class healthPickup : MonoBehaviour
     {
         Vector3 dir = target.transform.position - transform.position;
         dir = dir.normalized;
-        GetComponent<Rigidbody2D>().AddForce(dir * (2));
+        GetComponent<Rigidbody2D>().AddForce(dir * (3));
     }
 
 }
