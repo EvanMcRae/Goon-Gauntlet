@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,7 +31,7 @@ public class playerHealth : MonoBehaviour
     void Update()
     {
         hearts = GameObject.FindGameObjectsWithTag("Heart");
-        //Array.Sort(hearts, CompareObNames);
+        Array.Sort(hearts, CompareObNames);
 
         if (health > numberOfHearts)
         {
@@ -133,4 +134,5 @@ public class playerHealth : MonoBehaviour
             GetComponent<playerAttack>().PlaySound(lanternSound);
         }
     }
+
 }

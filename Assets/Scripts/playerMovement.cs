@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.Animations;
 
 public class playerMovement : MonoBehaviour
 {
@@ -101,6 +100,11 @@ public class playerMovement : MonoBehaviour
             weaponAnimator.SetInteger("direction", Mathf.Clamp(direction, 1, 2));
 
             animator.SetBool("moving", movement.magnitude > 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
 
     }

@@ -56,7 +56,7 @@ public class waveSpawner : MonoBehaviour
         waveDisplay.text = "Wave " + counter;
         goonDisplay.text = "Goons remaining: " + (reqKills - kills);
 
-        if (counter == 10 && kills >= reqKills)
+        if (counter == 10 && kills >= reqKills && !won)
         {
             won = true;
             StopCoroutine(waitAndSpawn());

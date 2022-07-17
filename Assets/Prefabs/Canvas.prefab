@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 5290368681487184161}
   - component: {fileID: 3147761001088454457}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Heart 7
   m_TagString: Heart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 5887423317276896505}
   - component: {fileID: 5368606233671551139}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Heart 6
   m_TagString: Heart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 361459927135999031}
   - component: {fileID: 5404289273298910587}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Heart 8
   m_TagString: Heart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 7513690537999476200}
   - component: {fileID: 7513690537999476201}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Heart 3
   m_TagString: Heart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1166,7 +1166,7 @@ GameObject:
   - component: {fileID: 7513690538361244893}
   - component: {fileID: 7513690538361244890}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Heart 1
   m_TagString: Heart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1242,7 +1242,7 @@ GameObject:
   - component: {fileID: 7513690538406888781}
   - component: {fileID: 7513690538406888778}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Heart 4
   m_TagString: Heart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1318,7 +1318,7 @@ GameObject:
   - component: {fileID: 7513690538823767741}
   - component: {fileID: 7513690538823767738}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Heart 2
   m_TagString: Heart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1465,7 +1465,7 @@ GameObject:
   - component: {fileID: 7513690539372815990}
   - component: {fileID: 7513690539372815991}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Heart 5
   m_TagString: Heart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
