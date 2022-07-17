@@ -24,6 +24,7 @@ public class playerAttack : MonoBehaviour
     public Image weaponDisplay;
     public Sprite[] weaponSprites;
 
+    public GameObject prefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -91,7 +92,7 @@ public class playerAttack : MonoBehaviour
             }
             else
             {
-                //implement shooting mechanincs 
+                GameObject obj = Instantiate(prefab, attackPoint.transform.position, Quaternion.identity);
             }
         }
     }

@@ -73,8 +73,8 @@ public class waveSpawner : MonoBehaviour
         //spawn enemies in arena
         for(int i = 0; i < spawns; i++)
         {
-            float randomX = Random.Range(-17f, 20f);
-            float randomY = Random.Range(-13f, 8f);
+            float randomX = Random.Range(-18f, 18f);
+            float randomY = Random.Range(-9f, 9f);
             Instantiate(enemy1prefab, new Vector3(randomX, randomY), new Quaternion(0f, 0f, 0f, 0f));
         }
     }

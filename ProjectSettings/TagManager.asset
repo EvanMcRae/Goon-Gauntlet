@@ -8,6 +8,10 @@ TagManager:
   - healthPack
   - lantern
   - WeaponDisplay
+<<<<<<< Updated upstream
+=======
+  - Enemy
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

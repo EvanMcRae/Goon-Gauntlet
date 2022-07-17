@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4465185224809053970}
   m_Layer: 6
   m_Name: Goon
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +109,7 @@ MonoBehaviour:
   rb: {fileID: 5242123242753296881}
   movement: 1
   canAttack: 0
+  chance: 3
 --- !u!95 &5242123242753296880
 Animator:
   serializedVersion: 4
@@ -167,7 +168,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.72, y: 0.88}
+    oldSize: {x: 1.52, y: 1.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -206,7 +207,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.72, y: 0.88}
+    oldSize: {x: 1.52, y: 1.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
