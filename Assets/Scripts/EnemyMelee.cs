@@ -13,8 +13,13 @@ public class EnemyMelee : MonoBehaviour
     public Rigidbody2D rb;
 
     public static bool movement = true;
+<<<<<<< Updated upstream
     public bool canAttack = false;
 
+=======
+
+    private IEnumerator coru1;
+>>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +61,19 @@ public class EnemyMelee : MonoBehaviour
         }
     }
 
+    public void knockBack()
+    {
+        Vector3 dir = target.transform.position - transform.position;
+        dir = dir.normalized;
+        GetComponent<Rigidbody2D>().AddForce(dir * -force);
+    }
+
+    public void stun()
+    {
+        coru1 = stunAndwWait();
+        StartCoroutine(coru1);
+    }
+
     void lunge()
     {
         //maybe gets players position in a holder, then moves towards it
@@ -81,6 +99,12 @@ public class EnemyMelee : MonoBehaviour
         {
             target.GetComponent<playerHealth>().takeDamage();
         }
+    }
+
+    IEnumerator stunAndwWait()
+    {
+        rb.velocity = new Vector2(0f, 0f);
+        yield return new WaitForSeconds(5);
     }
 
 }

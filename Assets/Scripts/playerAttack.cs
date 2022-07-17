@@ -61,7 +61,7 @@ public class playerAttack : MonoBehaviour
                         enemy.GetComponent<EnemyMelee>().ApplyDamage(1);
                         attacking = false;
                     }
-                    else if (weapon == Weapon.GLOVE)
+                    else if(weapon == Weapon.SCISSORS)
                     {
                         // TODO add enemy knockback
                         enemy.GetComponent<EnemyMelee>().ApplyDamage(1);
