@@ -7,17 +7,18 @@ public class bullet : MonoBehaviour
     Rigidbody2D rb;
     public float damage;
     private Transform player;
+    public static bool facingRight = true;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
        
-        if(player.GetComponent<playerMovement>().direction == 2)
+        if(facingRight == true)
         {
             rb.velocity = new Vector2(10f, 0f);
         }
-        else if(player.GetComponent<playerMovement>().direction == 1)
+        else if(facingRight == false)
         {
             rb.velocity = new Vector2(-10f, 0f);
         }
