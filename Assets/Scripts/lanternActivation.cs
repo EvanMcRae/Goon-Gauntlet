@@ -9,6 +9,7 @@ public class lanternActivation : MonoBehaviour
     public Transform textBox1;
     public Transform textBox2;
     public Transform textBox3;
+    public Transform textBox4;
     //public Transform anchor;
     private IEnumerator coru;
     // Start is called before the first frame update
@@ -48,6 +49,10 @@ public class lanternActivation : MonoBehaviour
             textBox = textBox3;
         }
         else if(textBox == textBox3)
+        {
+            textBox = textBox4;
+        }
+        else if(textBox == textBox4)
         {
             textBox = textBox1;
         }
