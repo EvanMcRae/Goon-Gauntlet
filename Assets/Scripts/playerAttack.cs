@@ -46,12 +46,6 @@ public class playerAttack : MonoBehaviour
         {
             Attack();
         }
-        
-        // TEMP - testing dice roll
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            rollDice();
-        }
 
         if (attacking)
         {

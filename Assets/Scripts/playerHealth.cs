@@ -57,11 +57,6 @@ public class playerHealth : MonoBehaviour
                 hearts[i].GetComponent<Image>().enabled = false;
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            takeDamage();
-        }
     }
 
     int CompareObNames(GameObject x, GameObject y)
