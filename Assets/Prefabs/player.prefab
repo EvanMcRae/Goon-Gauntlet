@@ -368,6 +368,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackRange: 0.5
+  weaponDisplay: {fileID: 0}
+  weaponSprites:
+  - {fileID: 21300000, guid: 78523dc8a54c3a24387c468b02942d80, type: 3}
+  - {fileID: 21300000, guid: 5ffb31980da70984180630226a8ba8b8, type: 3}
+  - {fileID: 21300000, guid: 4e079f6e07fb6fb47966140f735f04be, type: 3}
+  - {fileID: 21300000, guid: 714d6679653a33d4890645924b77087b, type: 3}
+  - {fileID: 21300000, guid: 0c7d684eb105fb04691396537b2ea2dd, type: 3}
+  - {fileID: 21300000, guid: a4e3e0d157b93b94a8b9572d3a9e8296, type: 3}
+  - {fileID: 21300000, guid: c14077149ce6e1441bac849bc984d21e, type: 3}
 --- !u!61 &81964881610646115
 BoxCollider2D:
   m_ObjectHideFlags: 0

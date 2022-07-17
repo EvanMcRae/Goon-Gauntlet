@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerAttack : MonoBehaviour
 {
@@ -20,17 +21,22 @@ public class playerAttack : MonoBehaviour
     public LayerMask enemyLayers;
     public float attackRange = 0.5f;
     private bool attacking;
+    public Image weaponDisplay;
+    public Sprite[] weaponSprites;
 
     // Start is called before the first frame update
     void Start()
     {
         animator.runtimeAnimatorController = normalAnimator;
         attacking = false;
+        weaponDisplay = GameObject.FindGameObjectWithTag("WeaponDisplay").GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        weaponDisplay.sprite = weaponSprites[(int) weapon];
+
         if (Input.GetKeyDown(KeyCode.B) && !attacking && weapon != Weapon.NONE)
         {
             Attack();
