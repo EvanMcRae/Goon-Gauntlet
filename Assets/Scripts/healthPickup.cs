@@ -16,7 +16,6 @@ public class healthPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Physics2D.IgnoreCollision("")
     }
 
     public void despawn()

@@ -59,7 +59,7 @@ public class EnemyMelee : MonoBehaviour
             if (!dead)
                 waveSpawner.kills++;
             dead = true;
-            int x = Random.Range(0, 5);
+            int x = Random.Range(0, 6);
             if(x == 1)
             {
                 GameObject obj = Instantiate(prefab, transform.position, Quaternion.identity);

@@ -20,9 +20,10 @@ public class playerAttack : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayers;
     public float attackRange = 0.5f;
-    private bool attacking;
+    private bool attacking, visualAttacking;
     public Image weaponDisplay;
     public Sprite[] weaponSprites;
+    public float attackCooldown = 0.5f;
 
     public GameObject prefab;
     // Start is called before the first frame update
@@ -30,6 +31,7 @@ public class playerAttack : MonoBehaviour
     {
         animator.runtimeAnimatorController = normalAnimator;
         attacking = false;
+        visualAttacking = false;
         weaponDisplay = GameObject.FindGameObjectWithTag("WeaponDisplay").GetComponent<Image>();
     }
 
@@ -59,25 +61,20 @@ public class playerAttack : MonoBehaviour
 
                 foreach (Collider2D enemy in hitEnemies)
                 {
-                   // Debug.Log("we hit " + enemy.name);
-                    
-
-                    if (weapon == Weapon.CLAW)
+                    if (weapon == Weapon.CLAW && !enemy.gameObject.CompareTag("healthPack"))
                     {
-                        // TODO how to differentiate claw?
                         enemy.GetComponent<EnemyMelee>().ApplyDamage(1);
                         enemy.GetComponent<EnemyMelee>().stun();
                         attacking = false;
                     }
-                    else if(weapon == Weapon.GLOVE)
+                    else if(weapon == Weapon.GLOVE && !enemy.gameObject.CompareTag("healthPack"))
                     {
                         enemy.GetComponent<EnemyMelee>().knockBack();
                         enemy.GetComponent<EnemyMelee>().ApplyDamage(1);
                         attacking = false;
                     }
-                    else if (weapon == Weapon.SCISSORS)
+                    else if (weapon == Weapon.SCISSORS && !enemy.gameObject.CompareTag("healthPack"))
                     {
-                        // TODO add invulnerability period to enemies so this isn't too OP
                         enemy.GetComponent<EnemyMelee>().ApplyDamage(0.2f);
                     }
                     else if (weapon == Weapon.FAN)
@@ -104,7 +101,7 @@ public class playerAttack : MonoBehaviour
                     }
                 }
             }
-            else
+            else if (visualAttacking)
             {
                 GameObject obj = Instantiate(prefab, attackPoint.transform.position, Quaternion.identity);
             }
@@ -114,6 +111,7 @@ public class playerAttack : MonoBehaviour
     void Attack()
     {
         attacking = true;
+        visualAttacking = true;
         animator.runtimeAnimatorController = attackAnimator;
         weaponAnimator.SetBool("attack", true);
         float duration = 0.0f;
@@ -138,6 +136,8 @@ public class playerAttack : MonoBehaviour
         yield return new WaitForSeconds(time);
         animator.runtimeAnimatorController = normalAnimator;
         weaponAnimator.SetBool("attack", false);
+        visualAttacking = false;
+        yield return new WaitForSeconds(attackCooldown);
         attacking = false;
     }
 

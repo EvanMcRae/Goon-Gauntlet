@@ -76,7 +76,7 @@ public class playerHealth : MonoBehaviour
             {
                 f.Flash(1f, 2, false);
             }
-            StartCoroutine(MakeInvincible(1f));
+            StartCoroutine(MakeInvincible(0.5f));
         }
     }
 
@@ -94,7 +94,7 @@ public class playerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("healthPack"))
+        if (collision.gameObject.CompareTag("healthPack") && health < numberOfHearts)
         {
             gainHealth();
             collision.gameObject.GetComponent<healthPickup>().despawn();
