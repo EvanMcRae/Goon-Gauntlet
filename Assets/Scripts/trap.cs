@@ -51,7 +51,7 @@ public class trap : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Player"))
         {
-            print("trapdoor stepped on");
+            //print("trapdoor stepped on");
             if (!killMode)
             {
                 if (!waiting)

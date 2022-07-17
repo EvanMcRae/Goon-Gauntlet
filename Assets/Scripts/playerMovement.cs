@@ -10,7 +10,7 @@ public class playerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator, weaponAnimator;
-    
+
     Vector2 movement;
 
     public float dashSpeed;
@@ -20,6 +20,7 @@ public class playerMovement : MonoBehaviour
 
     private bool attacking;
 
+    public GameObject dashEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +73,7 @@ public class playerMovement : MonoBehaviour
                 {
 
                     moveSpeed = dashSpeed;
+                    Instantiate(dashEffect, new Vector3(transform.position.x, transform.position.y, -6f), Quaternion.identity);
                     //print("try to dash left");
                 }
                 else if (direction == 2 && Input.GetKeyDown(KeyCode.Space))
@@ -93,15 +95,11 @@ public class playerMovement : MonoBehaviour
 
             animator.SetBool("moving", movement.magnitude > 0);
         }
-        else
+
+        void FixedUpdate()
         {
-            animator.SetTrigger("dead");
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }
-    }
 
-    private void FixedUpdate()
-    {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
-
 }
