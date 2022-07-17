@@ -12,6 +12,8 @@ public class waveSpawner : MonoBehaviour
     public GameObject enemy1prefab;
     public GameObject player;
     private IEnumerator coru;
+    private bool nextWave = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -40,21 +42,14 @@ public class waveSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (kills == reqKills)
+        if (kills == reqKills && !nextWave)
         {
-            counter++;
-            kills = 0;
-            enemies += 2;
-
-            player.GetComponent<playerAttack>().rollDice();
-
-            reqKills = enemies;
-            spawnWave(enemies);
+            StartCoroutine(waitAndSpawn());
         }
         if(counter == 10)
         {
             print("beat the game");
-        }*/
+        }
     }
 
 
@@ -71,18 +66,15 @@ public class waveSpawner : MonoBehaviour
 
     IEnumerator waitAndSpawn()
     {
-        while(counter < 10)
-        {
-            yield return new WaitUntil(() => kills == reqKills);
-            counter++;
-            kills = 0;
-            enemies += 2;
-            yield return new WaitForSeconds(5);
-            player.GetComponent<playerAttack>().rollDice();
-            yield return new WaitForSeconds(5);
-            reqKills = enemies;
-            spawnWave(enemies);    
-        }
-        print("you beat the game");
+        nextWave = true;
+        counter++;
+        kills = 0;
+        enemies += 2;
+        yield return new WaitForSeconds(5);
+        player.GetComponent<playerAttack>().rollDice();
+        yield return new WaitForSeconds(5);
+        reqKills = enemies;
+        spawnWave(enemies);    
+        nextWave = false;
     }
 }

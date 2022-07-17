@@ -105,8 +105,10 @@ MonoBehaviour:
   life: 3
   speed: 5
   stoppingDistance: 3
-  force: 500
+  force: 400
   rb: {fileID: 5242123242753296881}
+  movement: 1
+  canAttack: 0
 --- !u!95 &5242123242753296880
 Animator:
   serializedVersion: 4
@@ -155,7 +157,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5242123242753296884}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
