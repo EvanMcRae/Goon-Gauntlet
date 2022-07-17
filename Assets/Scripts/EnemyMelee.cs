@@ -13,13 +13,10 @@ public class EnemyMelee : MonoBehaviour
     public Rigidbody2D rb;
 
     public static bool movement = true;
-<<<<<<< Updated upstream
     public bool canAttack = false;
 
-=======
 
     private IEnumerator coru1;
->>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {
