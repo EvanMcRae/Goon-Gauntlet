@@ -12,6 +12,8 @@ public class playerHealth : MonoBehaviour
     public GameObject[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    public bool invincible = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,12 +68,23 @@ public class playerHealth : MonoBehaviour
 
     public void takeDamage()
     {
-        health -= 1;
-        SimpleFlash[] flash = GetComponentsInChildren<SimpleFlash>();
-        foreach (SimpleFlash f in flash) 
+        if (!invincible)
         {
-            f.Flash(0.5f, 2, true);
+            health -= 1;
+            SimpleFlash[] flash = GetComponentsInChildren<SimpleFlash>();
+            foreach (SimpleFlash f in flash)
+            {
+                f.Flash(2f, 4, false);
+            }
+            StartCoroutine(MakeInvincible(2f));
         }
+    }
+
+    IEnumerator MakeInvincible(float time)
+    {
+        invincible = true;
+        yield return new WaitForSeconds(time);
+        invincible = false;
     }
 
     void gainHealth()

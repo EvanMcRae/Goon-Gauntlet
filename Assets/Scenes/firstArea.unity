@@ -307,12 +307,12 @@ GameObject:
   - component: {fileID: 336877748}
   - component: {fileID: 336877747}
   m_Layer: 0
-  m_Name: hole
+  m_Name: spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &336877747
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -320,7 +320,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336877746}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -354,7 +354,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3eb050844454d1641bec059797298e54, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7dd229a968b741c4ca43c12b025c06ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -508,8 +508,9 @@ GameObject:
   - component: {fileID: 558888487}
   - component: {fileID: 558888490}
   - component: {fileID: 558888491}
+  - component: {fileID: 558888492}
   m_Layer: 0
-  m_Name: trapdoor
+  m_Name: trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -595,6 +596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 558888487}
+  sr2: {fileID: 336877747}
   killMode: 0
 --- !u!61 &558888491
 BoxCollider2D:
@@ -622,6 +624,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5494049, y: 2.529969}
   m_EdgeRadius: 0
+--- !u!114 &558888492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558888486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e12e787267acb344b8d0b137c6e2ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: f48c11c1d88e39a49b5a727880050983, type: 2}
 --- !u!1001 &952376570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1288,7 +1303,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d37b5d487b667394ca306d737fca6275, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0

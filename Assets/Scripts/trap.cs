@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class trap : MonoBehaviour
 {
-    public SpriteRenderer sr;
+    public SpriteRenderer sr, sr2;
     public bool killMode = false;
     private IEnumerator coru;
+    private bool waiting = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,9 +49,13 @@ public class trap : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Player"))
         {
             print("trapdoor stepped on");
-            if (killMode == false)
+            if (!killMode)
             {
-                StartCoroutine(Wait());
+                if (!waiting)
+                {
+                    GetComponent<SimpleFlash>().Flash(2.0f, 6, false);
+                    StartCoroutine(Wait());
+                }
             }
             else
             {
@@ -67,12 +73,16 @@ public class trap : MonoBehaviour
 
     IEnumerator Wait()
     {
+        waiting = true;
         //print("waiting?");
         yield return new WaitForSeconds(2f);
         sr.enabled = false;
+        sr2.enabled = true;
         killMode = true;
-        yield return new WaitForSeconds(9);
+        yield return new WaitForSeconds(4f);
         sr.enabled = true;
+        sr2.enabled = false;
         killMode = false;
+        waiting = false;
     }
 }
