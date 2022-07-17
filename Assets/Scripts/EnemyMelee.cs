@@ -21,17 +21,21 @@ public class EnemyMelee : MonoBehaviour
     private IEnumerator coru1;
 
     public GameObject prefab;
+    private AudioSource[] sources;
+    public AudioClip hurtSound, deathSound, lungeSound;
+
     // Start is called before the first frame update
     void Start()
     {
         chance = Random.Range(0, 6);
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        sources = transform.GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, target.position) > stoppingDistance && movement && !stunned)
+        if (Vector2.Distance(transform.position, target.position) > stoppingDistance && movement && !stunned && !dead)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
@@ -40,7 +44,8 @@ public class EnemyMelee : MonoBehaviour
             //movement = false;
         }
         
-        GetComponent<SpriteRenderer>().flipX = target.position.x - transform.position.x < 0;
+        if (!dead)
+            GetComponent<SpriteRenderer>().flipX = target.position.x - transform.position.x < 0;
     }
 
     public void ApplyDamage(float damage)
@@ -48,31 +53,40 @@ public class EnemyMelee : MonoBehaviour
         // MethodBase methodBase = MethodBase.GetCurrentMethod();
         // Debug.Log(methodBase.Name);
         
-        damage = Mathf.Abs(damage);
-        transform.GetComponent<Animator>().SetBool("hit", true);
-        life -= damage;
-        if (life < 0) life = 0;
-        GetComponent<SimpleFlash>().Flash(0.5f, 2, true);
-
-        if(life == 0)
+        if (!dead)
         {
-            if (!dead)
-                waveSpawner.kills++;
-            dead = true;
-            int x = Random.Range(0, 6);
-            if(x == 1)
+            damage = Mathf.Abs(damage);
+            transform.GetComponent<Animator>().SetBool("hit", true);
+            life -= damage;
+            if (life < 0) life = 0;
+            GetComponent<SimpleFlash>().Flash(0.5f, 2, true);
+
+            if(life == 0)
             {
-                GameObject obj = Instantiate(prefab, transform.position, Quaternion.identity);
+                waveSpawner.kills++;
+                dead = true;
+                int x = Random.Range(0, 6);
+                if(x == 1)
+                {
+                    GameObject obj = Instantiate(prefab, transform.position, Quaternion.identity);
+                }
+                StartCoroutine(Die());
             }
-            GameObject.Destroy(gameObject);
+            else
+            {
+                PlaySound(hurtSound);
+            }
         }
     }
 
     public void knockBack()
     {
-        Vector3 dir = target.transform.position - transform.position;
-        dir = dir.normalized;
-        GetComponent<Rigidbody2D>().AddForce(dir * -force);
+        if (!dead)
+        {
+            Vector3 dir = target.transform.position - transform.position;
+            dir = dir.normalized;
+            GetComponent<Rigidbody2D>().AddForce(dir * -force);
+        }
     }
 
     public void fanPush()
@@ -97,6 +111,7 @@ public class EnemyMelee : MonoBehaviour
 
     void lunge()
     {
+        PlaySound(lungeSound);
         //maybe gets players position in a holder, then moves towards it
         Vector3 dir = target.transform.position - transform.position;
         dir = dir.normalized;
@@ -128,7 +143,7 @@ public class EnemyMelee : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && canAttack)
+        if (other.gameObject.CompareTag("Player") && canAttack && !dead)
         {
             target.GetComponent<playerHealth>().takeDamage();
             canAttack = false;
@@ -142,6 +157,37 @@ public class EnemyMelee : MonoBehaviour
         rb.velocity = new Vector2(0f, 0f);
         yield return new WaitForSeconds(5);
         stunned = false;
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        foreach (AudioSource source in sources)
+        {
+            if (source.clip == clip && source.isPlaying)
+            {
+                if (source.time < 0.2f && source.isPlaying) return;
+                else source.Stop();
+            }
+        }
+        for (int index = sources.Length - 1; index >= 0; index--)
+        {
+            if (!sources[index].isPlaying)
+            {
+                sources[index].clip = clip;
+                sources[index].loop = false;
+                sources[index].Play();
+                return;
+            }
+        }
+    }
+
+    IEnumerator Die()
+    {
+        PlaySound(deathSound);
+        rb.isKinematic = true;
+        // TODO add particles, change animation state, change wait time
+        yield return new WaitForSeconds(2.0f);
+        GameObject.Destroy(gameObject);
     }
 
 }

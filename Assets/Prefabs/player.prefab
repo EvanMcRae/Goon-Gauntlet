@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 3231159192231307741}
   - component: {fileID: 1190254812302156625}
   - component: {fileID: 7336608409759850685}
+  - component: {fileID: 1689790661}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -372,7 +373,7 @@ MonoBehaviour:
   attackAnimator: {fileID: 22100000, guid: bc3b7e992f8760d45940caed085c34ab, type: 2}
   animator: {fileID: 7791785790061774772}
   weaponAnimator: {fileID: 1538453274}
-  attackPoint: {fileID: 0}
+  attackPoint: {fileID: 1972406623057866339}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
@@ -434,9 +435,9 @@ AudioSource:
   m_GameObject: {fileID: 7791785790598063365}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -307568171998367163, guid: 62d8b4ab5b9af094c8b2b0b335aeab5b, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -530,9 +531,9 @@ AudioSource:
   m_GameObject: {fileID: 7791785790598063365}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -307568171998367163, guid: 62d8b4ab5b9af094c8b2b0b335aeab5b, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -626,9 +627,9 @@ AudioSource:
   m_GameObject: {fileID: 7791785790598063365}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -307568171998367163, guid: 62d8b4ab5b9af094c8b2b0b335aeab5b, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -722,9 +723,9 @@ AudioSource:
   m_GameObject: {fileID: 7791785790598063365}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -307568171998367163, guid: 62d8b4ab5b9af094c8b2b0b335aeab5b, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -818,9 +819,9 @@ AudioSource:
   m_GameObject: {fileID: 7791785790598063365}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -307568171998367163, guid: 62d8b4ab5b9af094c8b2b0b335aeab5b, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -916,7 +917,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1010,9 +1011,9 @@ AudioSource:
   m_GameObject: {fileID: 7791785790598063365}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -307568171998367163, guid: 62d8b4ab5b9af094c8b2b0b335aeab5b, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1106,9 +1107,9 @@ AudioSource:
   m_GameObject: {fileID: 7791785790598063365}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -307568171998367163, guid: 62d8b4ab5b9af094c8b2b0b335aeab5b, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1193,3 +1194,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &1689790661
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7791785790598063365}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

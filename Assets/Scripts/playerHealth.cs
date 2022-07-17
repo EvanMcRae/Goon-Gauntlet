@@ -15,6 +15,7 @@ public class playerHealth : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
     public bool invincible = false;
+    public bool dead = false;
 
     public Transform textBox;
     public AudioClip hurtSound, deadSound, pickupSound, lanternSound;
@@ -68,7 +69,7 @@ public class playerHealth : MonoBehaviour
 
     public void takeDamage()
     {
-        if (!invincible)
+        if (!invincible && !dead)
         {
             health -= 1;
             SimpleFlash[] flash = GetComponentsInChildren<SimpleFlash>();
@@ -99,6 +100,9 @@ public class playerHealth : MonoBehaviour
 
     IEnumerator Die()
     {
+        dead = true;
+        GetComponent<Rigidbody2D>().isKinematic = true;
+        GameObject.Find("music").GetComponent<AudioSource>().Stop();
         textBox.position = new Vector3(textBox.position.x, 700f, textBox.position.z);
         yield return new WaitForSeconds(4);
         //GameObject.Destroy(gameObject);

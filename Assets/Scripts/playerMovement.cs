@@ -30,66 +30,73 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (!GetComponent<playerHealth>().dead)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
 
-        if (Input.GetAxisRaw("Horizontal") == -1)
-        {
-            //moving left
-            direction = 1;
-            bullet.facingRight = false;
-        }
-        else if (Input.GetAxisRaw("Horizontal") == 1)
-        {
-            //moving right
-            direction = 2;
-            bullet.facingRight = true;
-        }
-        else if (Input.GetAxisRaw("Vertical") == 1)
-        {
-            direction = 3;
-            bullet.facingRight = true;
-        }
-        else if (Input.GetAxisRaw("Vertical") == -1)
-        {
-            direction = 4;
-            bullet.facingRight = true;
-        }
+            if (Input.GetAxisRaw("Horizontal") == -1)
+            {
+                //moving left
+                direction = 1;
+                bullet.facingRight = false;
+            }
+            else if (Input.GetAxisRaw("Horizontal") == 1)
+            {
+                //moving right
+                direction = 2;
+                bullet.facingRight = true;
+            }
+            else if (Input.GetAxisRaw("Vertical") == 1)
+            {
+                direction = 3;
+                bullet.facingRight = true;
+            }
+            else if (Input.GetAxisRaw("Vertical") == -1)
+            {
+                direction = 4;
+                bullet.facingRight = true;
+            }
 
-        if (dashTime <= 0)
-        {
-            //direction = 0;
-            dashTime = startDashTime;
-            moveSpeed = walkSpeed;
+            if (dashTime <= 0)
+            {
+                //direction = 0;
+                dashTime = startDashTime;
+                moveSpeed = walkSpeed;
+            }
+            else
+            {
+                dashTime -= Time.deltaTime;
+                if (direction == 1 && Input.GetKeyDown(KeyCode.Space))
+                {
+
+                    moveSpeed = dashSpeed;
+                    //print("try to dash left");
+                }
+                else if (direction == 2 && Input.GetKeyDown(KeyCode.Space))
+                {
+                    moveSpeed = dashSpeed;
+                }
+                else if (direction == 3 && Input.GetKeyDown(KeyCode.Space))
+                {
+                    moveSpeed = dashSpeed;
+                }
+                else if (direction == 4 && Input.GetKeyDown(KeyCode.Space))
+                {
+                    moveSpeed = dashSpeed;
+                }
+            }
+
+            animator.SetInteger("direction", Mathf.Clamp(direction, 1, 2));
+            weaponAnimator.SetInteger("direction", Mathf.Clamp(direction, 1, 2));
+
+            animator.SetBool("moving", movement.magnitude > 0);
         }
         else
         {
-            dashTime -= Time.deltaTime;
-            if (direction == 1 && Input.GetKeyDown(KeyCode.Space))
-            {
-
-                moveSpeed = dashSpeed;
-                //print("try to dash left");
-            }
-            else if (direction == 2 && Input.GetKeyDown(KeyCode.Space))
-            {
-                moveSpeed = dashSpeed;
-            }
-            else if (direction == 3 && Input.GetKeyDown(KeyCode.Space))
-            {
-                moveSpeed = dashSpeed;
-            }
-            else if (direction == 4 && Input.GetKeyDown(KeyCode.Space))
-            {
-                moveSpeed = dashSpeed;
-            }
+            animator.SetTrigger("dead");
         }
-        
-        animator.SetInteger("direction", Mathf.Clamp(direction, 1, 2));
-        weaponAnimator.SetInteger("direction", Mathf.Clamp(direction, 1, 2));
-        
-        animator.SetBool("moving", movement.magnitude > 0);
     }
 
     private void FixedUpdate()

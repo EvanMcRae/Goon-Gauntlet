@@ -1370,7 +1370,7 @@ GameObject:
   - component: {fileID: 1367531172}
   - component: {fileID: 1367531171}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1385,7 +1385,7 @@ AudioSource:
   m_GameObject: {fileID: 1367531170}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4925921519265349016, guid: 62d8b4ab5b9af094c8b2b0b335aeab5b, type: 2}
   m_audioClip: {fileID: 8300000, guid: d37b5d487b667394ca306d737fca6275, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
@@ -1629,14 +1629,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1689790651, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
-      propertyPath: attackPoint
-      value: 
-      objectReference: {fileID: 1610772963}
-    - target: {fileID: 1689790651, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
-      propertyPath: enemyLayers.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 7791785790598063355, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: textBox
       value: 
@@ -1691,42 +1683,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
---- !u!4 &1610772963 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1972406623057866339, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
-  m_PrefabInstance: {fileID: 1610772962}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1689790655 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7791785790598063366, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
   m_PrefabInstance: {fileID: 1610772962}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &1689790661
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231036810}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1690475567
 GameObject:
   m_ObjectHideFlags: 0
