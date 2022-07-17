@@ -31,6 +31,7 @@ public class playerAttack : MonoBehaviour
     public GameObject prefab;
     public AudioClip rollDiceSound;
     public GameObject diceDisplay;
+    public Text weaponName;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,7 @@ public class playerAttack : MonoBehaviour
         weaponDisplay = GameObject.FindGameObjectWithTag("WeaponDisplay").GetComponent<Image>();
         weaponBackground = GameObject.FindGameObjectWithTag("WeaponBackground").GetComponent<Image>();
         diceDisplay = GameObject.FindGameObjectWithTag("DiceDisplay");
+        weaponName = GameObject.FindGameObjectWithTag("WeaponName").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -49,6 +51,25 @@ public class playerAttack : MonoBehaviour
     {
 
         weaponDisplay.sprite = weaponSprites[(int) weapon];
+        if (weapon == Weapon.MAGNET)
+        {
+            weaponName.text = "Magnet";
+        } else if (weapon == Weapon.CLAW)
+        {
+            weaponName.text = "Claw";
+        } else if (weapon == Weapon.GLOVE)
+        {
+            weaponName.text = "Glove";
+        } else if (weapon == Weapon.GUN)
+        {
+            weaponName.text = "Gun";
+        } else if (weapon == Weapon.SCISSORS)
+        {
+            weaponName.text = "Scissors";
+        } else if (weapon == Weapon.FAN)
+        {
+            weaponName.text = "Fan";
+        }
 
         if ((Input.GetKeyDown(KeyCode.B) || (Input.GetButtonDown("hit"))) && !visualAttacking && weapon != Weapon.NONE)
         {
