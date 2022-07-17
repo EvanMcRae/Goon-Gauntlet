@@ -24,6 +24,7 @@ public class EnemyMelee : MonoBehaviour
     private AudioSource[] sources;
     public AudioClip hurtSound, deathSound, lungeSound;
 
+    public GameObject healthEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +67,7 @@ public class EnemyMelee : MonoBehaviour
                 if(x == 1)
                 {
                     GameObject obj = Instantiate(prefab, transform.position, Quaternion.identity);
+                    Instantiate(healthEffect, new Vector3(transform.position.x, transform.position.y, -6f), Quaternion.identity);
                 }
                 StartCoroutine(Die());
             }
