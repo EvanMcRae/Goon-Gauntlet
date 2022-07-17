@@ -70,7 +70,7 @@ public class playerHealth : MonoBehaviour
         SimpleFlash[] flash = GetComponentsInChildren<SimpleFlash>();
         foreach (SimpleFlash f in flash) 
         {
-            f.Flash(1.0f, 2, true);
+            f.Flash(0.5f, 2, true);
         }
     }
 

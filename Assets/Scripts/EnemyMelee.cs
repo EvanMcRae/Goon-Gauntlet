@@ -48,7 +48,7 @@ public class EnemyMelee : MonoBehaviour
         transform.GetComponent<Animator>().SetBool("hit", true);
         life -= damage;
         if (life < 0) life = 0;
-        GetComponent<SimpleFlash>().Flash(1.0f, 2, true);
+        GetComponent<SimpleFlash>().Flash(0.5f, 2, true);
 
         if(life == 0)
         {

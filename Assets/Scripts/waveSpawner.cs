@@ -12,8 +12,8 @@ public class waveSpawner : MonoBehaviour
     public GameObject enemy1prefab;
     public GameObject player;
     private IEnumerator coru;
-    private bool nextWave = false;
-    
+    public bool nextWave = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +42,9 @@ public class waveSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (kills == reqKills && !nextWave)
+        Debug.Log(kills);
+
+        if (kills >= reqKills && !nextWave)
         {
             StartCoroutine(waitAndSpawn());
         }
@@ -74,7 +76,7 @@ public class waveSpawner : MonoBehaviour
         player.GetComponent<playerAttack>().rollDice();
         yield return new WaitForSeconds(5);
         reqKills = enemies;
-        spawnWave(enemies);    
+        spawnWave(enemies);
         nextWave = false;
     }
 }

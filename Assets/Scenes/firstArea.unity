@@ -846,6 +846,7 @@ MonoBehaviour:
   counter: 0
   enemy1prefab: {fileID: 5242123242753296884, guid: 389655989876d924dba094ed68de6203, type: 3}
   player: {fileID: 231036810}
+  nextWave: 0
 --- !u!1001 &1610772962
 PrefabInstance:
   m_ObjectHideFlags: 0
