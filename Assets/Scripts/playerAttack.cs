@@ -50,7 +50,7 @@ public class playerAttack : MonoBehaviour
 
         weaponDisplay.sprite = weaponSprites[(int) weapon];
 
-        if (Input.GetKeyDown(KeyCode.B) && !attacking && weapon != Weapon.NONE)
+        if (Input.GetKeyDown(KeyCode.B) && !visualAttacking && weapon != Weapon.NONE)
         {
             Attack();
         }
@@ -111,7 +111,7 @@ public class playerAttack : MonoBehaviour
             }
         }
 
-        if (attacking)
+        if (attacking || visualAttacking)
         {
             weaponBackground.sprite = abilityCooldown;
         }
