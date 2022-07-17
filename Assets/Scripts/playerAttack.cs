@@ -21,8 +21,9 @@ public class playerAttack : MonoBehaviour
     public LayerMask enemyLayers;
     public float attackRange = 0.5f;
     private bool attacking, visualAttacking;
-    public Image weaponDisplay;
+    public Image weaponDisplay, weaponBackground;
     public Sprite[] weaponSprites;
+    public Sprite abilityOn, abilityCooldown;
     public float attackCooldown = 0.5f;
 
     public GameObject prefab;
@@ -33,6 +34,7 @@ public class playerAttack : MonoBehaviour
         attacking = false;
         visualAttacking = false;
         weaponDisplay = GameObject.FindGameObjectWithTag("WeaponDisplay").GetComponent<Image>();
+        weaponBackground = GameObject.FindGameObjectWithTag("WeaponBackground").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -105,6 +107,15 @@ public class playerAttack : MonoBehaviour
             {
                 GameObject obj = Instantiate(prefab, attackPoint.transform.position, Quaternion.identity);
             }
+        }
+
+        if (attacking)
+        {
+            weaponBackground.sprite = abilityCooldown;
+        }
+        else
+        {
+            weaponBackground.sprite = abilityOn;
         }
     }
 

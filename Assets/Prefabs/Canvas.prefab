@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3168753101698685076}
   m_Layer: 5
   m_Name: WeaponContainer
-  m_TagString: Untagged
+  m_TagString: WeaponBackground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

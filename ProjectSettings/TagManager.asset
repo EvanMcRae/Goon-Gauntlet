@@ -10,6 +10,7 @@ TagManager:
   - WeaponDisplay
   - Enemy
   - wall
+  - WeaponBackground
   layers:
   - Default
   - TransparentFX
