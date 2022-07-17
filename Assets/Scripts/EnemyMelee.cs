@@ -15,7 +15,7 @@ public class EnemyMelee : MonoBehaviour
     public bool movement = true;
     public bool canAttack = false;
     private bool stunned = false;
-    private bool dead = false;
+    public bool dead = false;
     public int chance = 3;
 
     private IEnumerator coru1;
@@ -56,7 +56,7 @@ public class EnemyMelee : MonoBehaviour
         if (!dead)
         {
             damage = Mathf.Abs(damage);
-            transform.GetComponent<Animator>().SetBool("hit", true);
+            transform.GetComponent<Animator>().SetTrigger("hit");
             life -= damage;
             if (life < 0) life = 0;
             GetComponent<SimpleFlash>().Flash(0.5f, 2, true);
@@ -181,9 +181,11 @@ public class EnemyMelee : MonoBehaviour
         }
     }
 
-    IEnumerator Die()
+    public IEnumerator Die()
     {
         PlaySound(deathSound);
+        GetComponent<Animator>().SetTrigger("dead");
+        GetComponent<Collider2D>().enabled = false;
         rb.isKinematic = true;
         // TODO add particles, change animation state, change wait time
         yield return new WaitForSeconds(2.0f);

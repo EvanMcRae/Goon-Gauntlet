@@ -102,6 +102,7 @@ public class playerHealth : MonoBehaviour
     {
         dead = true;
         GetComponent<Rigidbody2D>().isKinematic = true;
+        GetComponent<Collider2D>().enabled = false;
         GameObject.Find("music").GetComponent<AudioSource>().Stop();
         textBox.position = new Vector3(textBox.position.x, 700f, textBox.position.z);
         yield return new WaitForSeconds(4);
