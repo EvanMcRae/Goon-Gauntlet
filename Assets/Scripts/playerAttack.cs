@@ -29,6 +29,8 @@ public class playerAttack : MonoBehaviour
     public AudioClip[] weaponSounds;
 
     public GameObject prefab;
+    public AudioClip rollDiceSound;
+    public GameObject diceDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -39,11 +41,13 @@ public class playerAttack : MonoBehaviour
         visualAttacking = false;
         weaponDisplay = GameObject.FindGameObjectWithTag("WeaponDisplay").GetComponent<Image>();
         weaponBackground = GameObject.FindGameObjectWithTag("WeaponBackground").GetComponent<Image>();
+        diceDisplay = GameObject.FindGameObjectWithTag("DiceDisplay");
     }
 
     // Update is called once per frame
     void Update()
     {
+
         weaponDisplay.sprite = weaponSprites[(int) weapon];
 
         if (Input.GetKeyDown(KeyCode.B) && !attacking && weapon != Weapon.NONE)
@@ -153,17 +157,24 @@ public class playerAttack : MonoBehaviour
 
     public void rollDice()
     {
+        StartCoroutine(diceRoll());
+        PlaySound(rollDiceSound);
+    }
+
+    public int pickWeapon()
+    {
         int picked = 0;
-        do {
+        do
+        {
             picked = Random.Range(1, 7);
-        } while (picked == (int) weapon);
-        weapon = (Weapon) picked;
-        weaponAnimator.runtimeAnimatorController = weaponAnimators[(int) weapon];
-        if(weapon == Weapon.FAN)
+        } while (picked == (int)weapon);
+        weapon = (Weapon)picked;
+        weaponAnimator.runtimeAnimatorController = weaponAnimators[(int)weapon];
+        if (weapon == Weapon.FAN)
         {
             attackRange = 1.5f;
         }
-        else if(weapon == Weapon.SCISSORS || weapon == Weapon.GLOVE || weapon == Weapon.CLAW)
+        else if (weapon == Weapon.SCISSORS || weapon == Weapon.GLOVE || weapon == Weapon.CLAW)
         {
             attackRange = .5f;
         }
@@ -171,6 +182,14 @@ public class playerAttack : MonoBehaviour
         {
             attackRange = 3f;
         }
+        return picked - 1;
+    }
+
+    public IEnumerator diceRoll()
+    {
+        diceDisplay.GetComponent<diceRoll>().startRoll();
+        yield return new WaitForSeconds(0.424f);
+        diceDisplay.GetComponent<diceRoll>().stopRoll(pickWeapon());
     }
 
     public void PlaySound(AudioClip clip)

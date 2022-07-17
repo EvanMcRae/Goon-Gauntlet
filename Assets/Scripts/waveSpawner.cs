@@ -14,6 +14,7 @@ public class waveSpawner : MonoBehaviour
     private IEnumerator coru;
     public bool nextWave = false;
     public bool won = false;
+    public AudioClip nextWaveSound;
 
     // Start is called before the first frame update
     void Start()
@@ -81,6 +82,7 @@ public class waveSpawner : MonoBehaviour
 
     IEnumerator waitAndSpawn()
     {
+        player.GetComponent<playerAttack>().PlaySound(nextWaveSound);
         nextWave = true;
         counter++;
         kills = 0;
