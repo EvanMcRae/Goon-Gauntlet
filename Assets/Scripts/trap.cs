@@ -19,9 +19,32 @@ public class trap : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("player"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Player"))
+        {
+            print("trapdoor stepped on");
+            if (killMode == false)
+            {
+                StartCoroutine(Wait());
+            }
+            else
+            {
+                if (collision.gameObject.CompareTag("Enemy"))
+                {
+                    collision.GetComponent<EnemyMelee>().ApplyDamage(3);
+                }
+                else if (collision.gameObject.CompareTag("Player"))
+                {
+                    collision.GetComponent<playerHealth>().takeDamage();
+                }
+            }
+        }
+    }*/
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Player"))
         {
             print("trapdoor stepped on");
             if (killMode == false)
@@ -45,7 +68,7 @@ public class trap : MonoBehaviour
     IEnumerator Wait()
     {
         //print("waiting?");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2f);
         sr.enabled = false;
         killMode = true;
         yield return new WaitForSeconds(9);

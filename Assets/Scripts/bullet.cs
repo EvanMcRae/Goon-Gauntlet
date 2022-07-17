@@ -15,11 +15,11 @@ public class bullet : MonoBehaviour
        
         if(player.GetComponent<playerMovement>().direction == 2)
         {
-            rb.velocity = new Vector2(5f, 0f);
+            rb.velocity = new Vector2(10f, 0f);
         }
         else if(player.GetComponent<playerMovement>().direction == 1)
         {
-            rb.velocity = new Vector2(-5f, 0f);
+            rb.velocity = new Vector2(-10f, 0f);
         }
 
         int x = Random.Range(0, 10);

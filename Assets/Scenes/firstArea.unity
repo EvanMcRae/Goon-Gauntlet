@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 558888488}
   - component: {fileID: 558888487}
   - component: {fileID: 558888490}
-  - component: {fileID: 558888489}
+  - component: {fileID: 558888491}
   m_Layer: 0
   m_Name: trapdoor
   m_TagString: Untagged
@@ -582,19 +582,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &558888489
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558888486}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.553212, y: 2.5426533, z: 0.2}
-  m_Center: {x: -0.0035829276, y: -0.012512815, z: 0}
 --- !u!114 &558888490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,6 +596,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 558888487}
   killMode: 0
+--- !u!61 &558888491
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558888486}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.016630054, y: 0.0030556917}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16.64, y: 10.24}
+    newSize: {x: 8.28, y: 5.08}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.5494049, y: 2.529969}
+  m_EdgeRadius: 0
 --- !u!1001 &952376570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1393,7 +1406,7 @@ GameObject:
   - component: {fileID: 1607988022}
   - component: {fileID: 1607988021}
   - component: {fileID: 1607988024}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: health Pack
   m_TagString: healthPack
   m_Icon: {fileID: 0}
@@ -1530,11 +1543,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7791785790598063366, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.1
+      value: -4.78
       objectReference: {fileID: 0}
     - target: {fileID: 7791785790598063366, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7791785790598063366, guid: 04e6a33a7eee70e49b3419ea21c36bcf, type: 3}
       propertyPath: m_LocalPosition.z

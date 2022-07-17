@@ -42,7 +42,7 @@ public class waveSpawner : MonoBehaviour
     {
         if (kills >= reqKills && !nextWave && !won)
         {
-            Debug.Log(kills + " " + reqKills);
+            //Debug.Log(kills + " " + reqKills);
             StartCoroutine(waitAndSpawn());
         }
         if(counter >= 10)
