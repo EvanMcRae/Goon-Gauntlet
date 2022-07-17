@@ -387,6 +387,86 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1199880260002485267, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199880260002485267, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199880260002485267, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199880260002485267, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490463909871900385, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490463909871900385, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490463909871900385, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490463909871900385, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906999896253928245, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906999896253928245, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906999896253928245, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906999896253928245, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183333397381660060, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183333397381660060, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183333397381660060, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183333397381660060, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871663862308375669, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871663862308375669, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871663862308375669, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6871663862308375669, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7513690537999476198, guid: c29fd3e62b5a3c2418f289a910bcb881, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -963,6 +1043,7 @@ MonoBehaviour:
   enemy1prefab: {fileID: 5242123242753296884, guid: 389655989876d924dba094ed68de6203, type: 3}
   player: {fileID: 231036810}
   nextWave: 0
+  won: 0
 --- !u!1 &1607988020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,7 +1115,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: f55afe0c6368f09458c487023c95c8b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

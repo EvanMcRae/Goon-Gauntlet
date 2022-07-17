@@ -15,12 +15,14 @@ public class EnemyMelee : MonoBehaviour
     public bool movement = true;
     public bool canAttack = false;
     private bool stunned = false;
-
+    private bool dead = false;
+    public int chance = 3;
 
     private IEnumerator coru1;
     // Start is called before the first frame update
     void Start()
     {
+        chance = Random.Range(0, 6);
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
@@ -52,7 +54,9 @@ public class EnemyMelee : MonoBehaviour
 
         if(life == 0)
         {
-            waveSpawner.kills++;
+            if (!dead)
+                waveSpawner.kills++;
+            dead = true;
             GameObject.Destroy(gameObject);
         }
     }
@@ -93,9 +97,15 @@ public class EnemyMelee : MonoBehaviour
         canAttack = true;
         movement = false;
         rb.velocity = new Vector2(0f, 0f);
+        
+        EnemyMelee[] enemies = GameObject.FindObjectsOfType<EnemyMelee>();
+        foreach (EnemyMelee e in enemies)
+        {
+            e.chance = Random.Range(0, 6);
+        }
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player") && canAttack)
         {

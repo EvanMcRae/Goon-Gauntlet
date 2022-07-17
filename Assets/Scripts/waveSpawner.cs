@@ -7,12 +7,13 @@ public class waveSpawner : MonoBehaviour
     public int reqKills = 0;
     public int enemies = 3;
     public static int kills = 0; //whenerver an enemies dies, its death function or whatever will add 1 to kills
-    public int counter = 0;
+    public int counter = 1;
 
     public GameObject enemy1prefab;
     public GameObject player;
     private IEnumerator coru;
     public bool nextWave = false;
+    public bool won = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,23 +35,35 @@ public class waveSpawner : MonoBehaviour
         player.GetComponent<playerAttack>().rollDice();
         reqKills = enemies;
         spawnWave(enemies);
-
-        coru = waitAndSpawn();
-        StartCoroutine(coru);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(kills);
-
-        if (kills >= reqKills && !nextWave)
+        if (kills >= reqKills && !nextWave && !won)
         {
+            Debug.Log(kills + " " + reqKills);
             StartCoroutine(waitAndSpawn());
         }
-        if(counter == 10)
+        if(counter >= 10)
         {
+            won = true;
             print("beat the game");
+        }
+
+        bool someoneCanAttack = false;
+        EnemyMelee[] enemies = GameObject.FindObjectsOfType<EnemyMelee>();
+        foreach (EnemyMelee e in enemies)
+        {
+            if (e.chance == 1)
+                someoneCanAttack = true;
+        }
+        if (!someoneCanAttack)
+        {
+            foreach (EnemyMelee e in enemies)
+            {
+                e.chance = Random.Range(0, 6);
+            }
         }
     }
 
